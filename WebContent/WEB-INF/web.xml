@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>HibernateWebApp</display-name>
+  <servlet>
+    <display-name>User</display-name>
+    <servlet-name>User</servlet-name>
+    <servlet-class>com.jwt.hibernate.controller.UserControllerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>CD</display-name>
+    <servlet-name>CD</servlet-name>
+    <servlet-class>com.jwt.hibernate.controller.CDControllerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.jwt.hibernate.controller.LoginControllerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>User</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CD</servlet-name>
+    <url-pattern>/addCD</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>manageCD.html</welcome-file>
+  </welcome-file-list>
+</web-app>
