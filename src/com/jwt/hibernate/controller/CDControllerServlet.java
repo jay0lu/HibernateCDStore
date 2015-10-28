@@ -20,13 +20,14 @@ public class CDControllerServlet extends HttpServlet {
  
         String cdName = request.getParameter("cdName");
         String details = request.getParameter("details");
+        String category = request.getParameter("category");
         BigDecimal price = new BigDecimal(request.getParameter("price"));
         int stock = Integer.parseInt(request.getParameter("stock"));
  
         
         try {
             CDDAO cdDAO = new CDDAO();
-            boolean success = cdDAO.addCDDetails(cdName, details, price, stock);
+            boolean success = cdDAO.addCDDetails(cdName, details, price, stock, category);
             
             
             String nextJSP;

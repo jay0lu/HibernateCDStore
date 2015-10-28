@@ -17,7 +17,7 @@ import com.jwt.hibernate.bean.CD;
  
 public class CDDAO {
  
-    public boolean addCDDetails(String cdName, String details, BigDecimal price, int stock) {
+    public boolean addCDDetails(String cdName, String details, BigDecimal price, int stock, String category) {
         try {
             // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
@@ -34,8 +34,10 @@ public class CDDAO {
             CD cd = new CD();
             cd.setCDName(cdName);
             cd.setDetails(details);
+            cd.setCategory(category);
             cd.setPrice(price);
             cd.setStock(stock);
+            
             session.save(cd);
             transaction.commit();
             System.out.println("\n\n Details Added \n");

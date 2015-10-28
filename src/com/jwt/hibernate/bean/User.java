@@ -13,7 +13,7 @@ public class User {
     private String password1;
     private String email;
     private String phone;
-    private String city;
+    private String address;
  
     public int getId() {
         return id;
@@ -55,12 +55,12 @@ public class User {
         this.phone = phone;
     }
  
-    public String getCity() {
-        return city;
+    public String getAddress() {
+        return address;
     }
  
-    public void setCity(String city) {
-        this.city = city;
+    public void setAddress(String address) {
+        this.address = address;
     }
     
     

@@ -31,9 +31,10 @@
 				<td><input type="text" name="phone" size="30" /></td>
 			</tr>
 			<tr>
-				<td>City :</td>
-				<td><input type="text" name="city" size="30" /></td>
+				<td>Address :</td>
+				<td><input type="text" name="address" size="30" /></td>
 			</tr>
+			
 		</table>
 		<p />
 		<input type="submit" value="Register" />
@@ -47,7 +48,9 @@
 	<input type="text" name="email" size="30" onblur="loadDoc()" />
 
 
-	<script>
+<!-- 
+ 	<script>
+ 	//ajax
 	function loadDoc() {
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
@@ -58,7 +61,8 @@
 	  xhttp.open("GET", "/register?userName=abc", true);
 	  xhttp.send();
 	}
-</script>
+</script> 
+-->
 
 
 </body>

@@ -13,6 +13,7 @@ public class CD {
     
 	private String cdName;
     private String details;
+    private String category;
     private BigDecimal price;
     private int stock;
  
@@ -40,6 +41,14 @@ public class CD {
         this.details = details;
     }
  
+    public String getCategory(){
+    	return category;
+    }
+    
+    public void setCategory(String category){
+    	this.category = category;
+    }
+    
     public BigDecimal getPrice() {
         return price;
     }

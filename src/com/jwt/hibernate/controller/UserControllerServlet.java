@@ -21,29 +21,31 @@ public class UserControllerServlet extends HttpServlet {
         String password = request.getParameter("password1");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
-        String city = request.getParameter("city");
+        String address = request.getParameter("address");
  
         
         try {
             UserDAO userDAO = new UserDAO();
-            boolean success = userDAO.addUserDetails(userName, password, email, phone, city);
-            
+            boolean success = userDAO.addUserDetails(userName, password, email, phone, address);
             
             String nextJSP;
+            System.out.println(success);
+            
             if (success){
             	nextJSP = "/success.jsp";
+            	
             }
             else {
             	nextJSP = "/failed.jsp";
             }
             
             HttpSession session = request.getSession();
-            session.setAttribute("userName", userName);
+            session.setAttribute("email", email);
             
-            //response.sendRedirect("/HibernateWebApp/success.jsp");
+            response.sendRedirect("/HibernateWebApp/success.jsp");
             
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-            dispatcher.forward(request,response);
+//            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+//            dispatcher.forward(request,response);
             
             
         } catch (Exception e) {

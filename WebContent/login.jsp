@@ -1,6 +1,6 @@
 
 	<form method = "POST" action="login">
-		username: <input type="text" name="userName">
+		email: <input type="text" name="email">
 		password: <input type="password" name="password">
 		<input type="button" value="cancel">
 		<input type="submit" name="submitform" value="submit">

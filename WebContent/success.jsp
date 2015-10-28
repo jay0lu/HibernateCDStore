@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <%@ page import="com.jwt.hibernate.dao.*, com.jwt.hibernate.bean.*, java.util.*, java.io.*" %>
 <% 
-	String userName= (String) session.getAttribute( "userName" ); 
-	
+	String userEmail= (String) session.getAttribute( "email" ); 
+	String userName = "";
 	String email="";
 	String phone="";
-	String city="";
-	if (userName != null ){
+	String address="";
+	if (userEmail != null ){
 		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUserDetails("userName");
-		
+		User user = userDAO.getUserDetails(userEmail);
+		userName = user.getUserName();
 		email = user.getEmail();
 		phone = user.getPhone();
-		city = user.getCity(); 
+		address = user.getAddress(); 
 	}
 %>
 
@@ -27,7 +27,7 @@
 <br>User Name: <%= userName %>
 <br>E-mail: <%= email %>
 <br>Phone: <%= phone %>
-<br>City: <%= city %>
+<br>Address: <%= address %>
 
 </table>
 </body>

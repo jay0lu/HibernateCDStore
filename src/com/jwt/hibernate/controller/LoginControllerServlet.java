@@ -18,17 +18,24 @@ public class LoginControllerServlet extends HttpServlet {
  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
-        String userName = request.getParameter("userName");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         
         try {
             UserDAO userDAO = new UserDAO();
-            User user = userDAO.getUserDetails(userName);
+            User user = userDAO.getUserDetails(email);
             if (password.equals(user.getPassword1())) {
-            	//密码正确
+            	//password correct
             	System.out.println("login success");
+            	
+            	HttpSession session = request.getSession();
+            	
+            	session.setAttribute("sessionId", email);
+            	
+            	System.out.println("Test get session:" + session.getAttribute("sessionId"));
             } else {
-            	//密码错误
+            	//password wrong
+            	System.out.println("wrong password");
             }
             
             
@@ -40,10 +47,10 @@ public class LoginControllerServlet extends HttpServlet {
 //            else {
 //            	nextJSP = "/failed.jsp";
 //            }
+////            
+//            HttpSession session = request.getSession();
+//            session.setAttribute("userName", userName);
 //            
-            HttpSession session = request.getSession();
-            session.setAttribute("userName", userName);
-            
             //response.sendRedirect("/HibernateWebApp/success.jsp");
 //            
 //            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
