@@ -42,16 +42,30 @@
 	</form>
 
  	<h1>Edit CD</h1>
+
 	<form action="editCD" method="get">
 		<table cellpadding="3pt">
 			<tr>
 				<td>CD Name :</td>
-				<td><input type="text" name="cdName" size="30" /></td>
+				<td><input id="cdName" type="text" name="cdName" size="30" /></td>
 			</tr>
 		</table>
 		<p />
-		<input type="submit" value="editCD" />
+		<button onclick="fetchCDInfo()">Get Info</button>
 	</form>
+	<script>
+		function fetchCDInfo() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					//document.getElementById("demo").innerHTML = xhttp.responseText;
+					alert(xhttp.responseText);
+				}
+			}
+			xhttp.open("GET", "/editCD?cdName=" + document.getElementById("cdName").innerText, true);
+			xhttp.send();
+		}
+	</script>
 
 
 </body>

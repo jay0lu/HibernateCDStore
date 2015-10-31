@@ -18,10 +18,9 @@
   </servlet>
   <servlet>
     <display-name>EditCD</display-name>
-    <servlet-name>EdtiCD</servlet-name>
+    <servlet-name>EditCD</servlet-name>
     <servlet-class>com.jwt.hibernate.controller.EdtiCDControllerServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>User</servlet-name>
     <url-pattern>/register</url-pattern>
@@ -38,7 +37,6 @@
     <servlet-name>EditCD</servlet-name>
     <url-pattern>/editCD</url-pattern>
   </servlet-mapping>
-  
   <welcome-file-list>
     <welcome-file>manageCD.jsp</welcome-file>
   </welcome-file-list>

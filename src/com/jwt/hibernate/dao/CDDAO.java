@@ -66,14 +66,14 @@ public class CDDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CD");
+            Query query = session.createQuery("FROM CD");  // add WHERE cdName to select cd.
             
             java.util.List<CD> cd = query.list();
 
             transaction.commit();
             
             
-            return cd.iterator().next();
+            return cd.iterator().next();  //select the first one
  
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
@@ -82,5 +82,32 @@ public class CDDAO {
         }
  
     }
+    
+    public List getAllCD() {
+    	try {
+        	Configuration  configuration = new Configuration ().configure();
+        	
+            // 2. create sessionfactory
+            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+            SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
  
+            // 3. Get Session object
+            Session session = sessionFactory.openSession();
+ 
+            // 4. Starting Transaction
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createQuery("FROM CD");  // add WHERE cdName to select cd.
+            java.util.List<CD> cdList = query.list();
+
+            transaction.commit();
+            return (List) cdList; 
+            
+		} catch (Exception e) {
+			// TODO: handle exception
+            System.out.println(e.getMessage());
+            System.out.println("error");
+            return null;
+		}
+		
+	}
 }

@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jwt.hibernate.dao.UserDAO;
 
-/**
- * Servlet implementation class EditUserControllerServlet
- */
+
 @WebServlet("/EditUserControllerServlet")
 public class EditUserControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

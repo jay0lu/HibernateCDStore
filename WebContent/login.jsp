@@ -6,7 +6,6 @@
 		<input type="submit" name="submitform" value="submit">
 	</form>
 	
-</body>
 <%
 /*
  if (request.getParameter("submitform") != null) {

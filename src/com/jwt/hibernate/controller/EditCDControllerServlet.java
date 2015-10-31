@@ -1,6 +1,8 @@
 package com.jwt.hibernate.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.math.BigDecimal;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,18 +31,23 @@ public class EditCDControllerServlet extends HttpServlet {
 			if (cdName != null) {
 				CDDAO cdDAO = new CDDAO();
 				CD cd = cdDAO.getCDDetails(cdName);
-
-//				String nextJSP;
-//				if (success) {
-//					nextJSP = "/successCD.jsp";
-//				} else {
-//					nextJSP = "/failedCD.jsp";
-//				}
+				
+				String detail = cd.getDetails();
+				String category = cd.getCategory();
+			    BigDecimal price = cd.getPrice();
+			    int stock = cd.getStock();
+			    String returnValue = cdName+","+category+","+detail+","+price+","+stock;
+			    
+			    
+		        response.setContentType("application/json");
+		        response.setCharacterEncoding("utf-8");
+		        PrintWriter writer = response.getWriter();
+		        writer.write(returnValue);
 			}
 			HttpSession session = request.getSession();
 			session.setAttribute("cdName", cdName);
 
-			response.sendRedirect("/HibernateWebApp/success.jsp");
+			//response.sendRedirect("/HibernateWebApp/success.jsp");
 			//response.sendRedirect("/HibernateWebApp/success.html?cdName=asd&cdPrice=123");
 
 		} catch (Exception e) {
@@ -52,8 +59,8 @@ public class EditCDControllerServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }
