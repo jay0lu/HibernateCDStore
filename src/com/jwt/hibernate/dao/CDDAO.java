@@ -17,7 +17,7 @@ import com.jwt.hibernate.bean.CD;
  
 public class CDDAO {
  
-    public boolean addCDDetails(String cdName, String details, BigDecimal price, int stock, String category) {
+    public boolean addCDDetails(String cdName, String details, BigDecimal price, int stock, String category, String singer, String img) {
         try {
             // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
@@ -32,11 +32,13 @@ public class CDDAO {
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
             CD cd = new CD();
-            cd.setCDName(cdName);
+            cd.setCdName(cdName);
+            cd.setSinger(singer);
             cd.setDetails(details);
             cd.setCategory(category);
             cd.setPrice(price);
             cd.setStock(stock);
+            cd.setImg(img);
             
             session.save(cd);
             transaction.commit();
@@ -66,7 +68,7 @@ public class CDDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CD");  // add WHERE cdName to select cd.
+            Query query = session.createQuery("FROM CD WHERE cdName ='" + cdName + "'");  // add WHERE cdName to select cd.
             
             java.util.List<CD> cd = query.list();
 
@@ -96,7 +98,7 @@ public class CDDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CD");  // add WHERE cdName to select cd.
+            Query query = session.createQuery("FROM CD");  
             java.util.List<CD> cdList = query.list();
 
             transaction.commit();

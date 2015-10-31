@@ -15,6 +15,10 @@
 				<td><input type="text" name="cdName" size="30" /></td>
 			</tr>
 			<tr>
+				<td>Singer Name :</td>
+				<td><input type="text" name="singer" size="30" /></td>
+			</tr>
+			<tr>
 				<td>Details :</td>
 				<td><input type="text" name="details" /></td>
 			</tr>
@@ -35,6 +39,10 @@
 			<tr>
 				<td>Stock :</td>
 				<td><input type="number" name="stock" min="0" /></td>
+			</tr>
+			<tr>
+				<td>Image URL :</td>
+				<td><input type="text" name="img" size="30" /></td>
 			</tr>
 		</table>
 		<p />

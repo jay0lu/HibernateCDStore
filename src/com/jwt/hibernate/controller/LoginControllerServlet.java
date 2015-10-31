@@ -18,10 +18,12 @@ public class LoginControllerServlet extends HttpServlet {
  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
+    	
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
         try {
+        	
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getUserDetails(email);
             if (password.equals(user.getPassword1())) {
@@ -63,4 +65,13 @@ public class LoginControllerServlet extends HttpServlet {
         }
  
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    		throws ServletException, IOException {
+    	
+    	    String userPath = request.getServletPath();
+    	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
+        	request.getRequestDispatcher(url).forward(request, response);
+    }
+
+
 }

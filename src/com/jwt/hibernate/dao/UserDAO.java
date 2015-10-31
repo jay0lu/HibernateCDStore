@@ -94,4 +94,23 @@ public class UserDAO {
     	}
     	return true;
     }
+    
+    public boolean changeUserDetails(String email, String userName, String phone, String address) {
+    	try {
+        	Session session = hibernateConfig();
+            Transaction transaction = session.beginTransaction();
+            
+            User user = (User)session.get(User.class, 1);
+            user.setAddress(address);
+            user.setUserName(userName);
+            user.setPhone(phone);
+
+            session.update(user);
+            transaction.commit();
+
+    	} catch (Exception e) {
+    		
+    	}
+    	return true;
+    }
 }

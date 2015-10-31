@@ -19,15 +19,18 @@ public class CDControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
         String cdName = request.getParameter("cdName");
+        String singer = request.getParameter("singer");
         String details = request.getParameter("details");
         String category = request.getParameter("category");
         BigDecimal price = new BigDecimal(request.getParameter("price"));
         int stock = Integer.parseInt(request.getParameter("stock"));
+        String img = request.getParameter("img");
+        
  
         
         try {
             CDDAO cdDAO = new CDDAO();
-            boolean success = cdDAO.addCDDetails(cdName, details, price, stock, category);
+            boolean success = cdDAO.addCDDetails(cdName, details, price, stock, category,singer, img);
             
             
             String nextJSP;

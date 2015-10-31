@@ -75,15 +75,15 @@
     <div class="tab-content">
        
       <div id="login">   
-        <h2>Let's Get Back to Business!</h2>
+<!--         <h2>Let's Get Back to Business!</h2> --> 
         
-        <form action="checkcredentials.html" method="post">
+        <form action="login" method="post">
         
           <div class="field-wrap">
           <label>
-            Username<span class="req">*</span>
+            Email<span class="req">*</span>
           </label>
-          <input type="email" required autocomplete="off" name="username"/>
+          <input type="email" required autocomplete="off" name="email"/>
         </div>
         
         <div class="field-wrap">
@@ -96,6 +96,15 @@
         <button class="button button-block"/>Log In</button>
         
         </form>
+        
+        <!-- 
+        <form method = "POST" action="login">
+		email: <input type="text" name="email">
+		password: <input type="password" name="password">
+		<input type="button" value="cancel">
+		<input type="submit" name="submitform" value="submit">
+	</form>
+         -->
       </div>
 
     <div id="signup"> 
