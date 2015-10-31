@@ -27,18 +27,15 @@ public class LoginControllerServlet extends HttpServlet {
             if (password.equals(user.getPassword1())) {
             	//password correct
             	System.out.println("login success");
-            	
             	HttpSession session = request.getSession();
-            	
             	session.setAttribute("sessionId", email);
-            	
             	System.out.println("Test get session:" + session.getAttribute("sessionId"));
+
             } else {
             	//password wrong
             	System.out.println("wrong password");
             }
-            
-            
+
 //            
 //            String nextJSP;
 //            if (success){
