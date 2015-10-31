@@ -26,6 +26,7 @@ public class CDControllerServlet extends HttpServlet {
         int stock = Integer.parseInt(request.getParameter("stock"));
         String img = request.getParameter("img");
         
+        String showcategory = request.getParameter("category");
  
         
         try {
