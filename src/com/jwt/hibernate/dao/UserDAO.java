@@ -36,7 +36,7 @@ public class UserDAO {
             
             User user = new User();
             user.setUserName(userName);
-            user.setPassword1(password);
+            user.setPassword(password);
             user.setEmail(email);
             user.setAddress(address);
             user.setPhone(phone);

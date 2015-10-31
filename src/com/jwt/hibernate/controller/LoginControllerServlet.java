@@ -26,7 +26,7 @@ public class LoginControllerServlet extends HttpServlet {
         	
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getUserDetails(email);
-            if (password.equals(user.getPassword1())) {
+            if (password.equals(user.getPassword())) {
             	//password correct
             	System.out.println("login success");
             	

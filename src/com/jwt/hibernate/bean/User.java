@@ -10,7 +10,7 @@ public class User {
     private int id;
     
 	private String userName;
-    private String password1;
+    private String password;
     private String email;
     private String phone;
     private String address;
@@ -31,12 +31,12 @@ public class User {
         this.userName = userName;
     }
  
-    public String getPassword1() {
-        return password1;
+    public String getPassword() {
+        return password;
     }
  
-    public void setPassword1(String password1) {
-        this.password1 = password1;
+    public void setPassword(String password) {
+        this.password = password;
     }
  
     public String getEmail() {

@@ -18,7 +18,7 @@ public class UserControllerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
         String userName = request.getParameter("userName");
-        String password = request.getParameter("password1");
+        String password = request.getParameter("password");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
