@@ -23,7 +23,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>User</servlet-name>
-    <url-pattern>/register</url-pattern>
+    <url-pattern>/signup</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CD</servlet-name>
@@ -38,6 +38,6 @@
     <url-pattern>/editCD</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-    <welcome-file>manageCD.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

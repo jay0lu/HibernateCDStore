@@ -27,7 +27,7 @@ public class UserDAO {
         return session;
 	}
 	
-    public boolean addUserDetails(String userName, String password, String email,
+    public boolean addUserDetails(String firstName,String lastName, String password, String email,
             String phone, String address) {
         try {
         	
@@ -35,7 +35,8 @@ public class UserDAO {
             Transaction transaction = session.beginTransaction();
             
             User user = new User();
-            user.setUserName(userName);
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
             user.setPassword(password);
             user.setEmail(email);
             user.setAddress(address);
@@ -95,14 +96,15 @@ public class UserDAO {
     	return true;
     }
     
-    public boolean changeUserDetails(String email, String userName, String phone, String address) {
+    public boolean changeUserDetails(String email, String firstName, String lastName, String phone, String address) {
     	try {
         	Session session = hibernateConfig();
             Transaction transaction = session.beginTransaction();
             
             User user = (User)session.get(User.class, 1);
             user.setAddress(address);
-            user.setUserName(userName);
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
             user.setPhone(phone);
 
             session.update(user);

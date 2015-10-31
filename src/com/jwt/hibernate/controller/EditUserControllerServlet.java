@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jwt.hibernate.dao.UserDAO;
+import com.sun.org.apache.bcel.internal.generic.LASTORE;
 
 
 @WebServlet("/EditUserControllerServlet")
@@ -27,11 +28,12 @@ public class EditUserControllerServlet extends HttpServlet {
 		doGet(request, response);
 		
 		String email = (String) request.getSession().getAttribute("sessionId");
-		String userName = request.getParameter("userName");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		UserDAO userDao = new UserDAO();
-		userDao.changeUserDetails(email, userName, phone, address);
+		userDao.changeUserDetails(email, firstName, lastName, phone, address);
 		
 	}
 

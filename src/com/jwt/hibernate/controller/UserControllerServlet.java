@@ -16,17 +16,19 @@ public class UserControllerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- 
-        String userName = request.getParameter("userName");
+    	
+    	
+        String firstName = request.getParameter("firstname");
+        String lastName = request.getParameter("lastName");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
- 
+        
         
         try {
             UserDAO userDAO = new UserDAO();
-            boolean success = userDAO.addUserDetails(userName, password, email, phone, address);
+            boolean success = userDAO.addUserDetails(firstName, lastName, password, email, phone, address);
             
             String nextJSP;
             System.out.println(success);
@@ -53,5 +55,12 @@ public class UserControllerServlet extends HttpServlet {
             e.printStackTrace();
         }
  
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    		throws ServletException, IOException {
+    	
+    	    String userPath = request.getServletPath();
+    	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
+        	request.getRequestDispatcher(url).forward(request, response);
     }
 }

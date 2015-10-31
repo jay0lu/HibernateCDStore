@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="button" value="save cookie" onclick="saveCookie()" />
+	<input type="button" value="show cookie" onclick="showCookie()" />
+	<input type="button" value="delete cookie" onclick="deleteCookie()" />
+	<script type="text/javascript">
+		function saveCookie () {
+			document.cookie="username=John Doe; expires=Sun, 1 Nov 2015 12:00:00 EST";
+		}
+
+		function showCookie() {
+			var x = document.cookie;
+			alert(x);
+		}
+
+		function deleteCookie() {
+			document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 EST";
+		}
+	</script>
+</body>
+</html>
