@@ -112,4 +112,34 @@ public class CDDAO {
 		}
 		
 	}
+    
+    
+    public List getcategory(String category) {
+    	try {
+        	Configuration  configuration = new Configuration ().configure();
+        	
+            // 2. create sessionfactory
+            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+            SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
+ 
+            // 3. Get Session object
+            Session session = sessionFactory.openSession();
+ 
+            // 4. Starting Transaction
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createQuery("FROM CD WHERE category = '" + category + "'");  
+            java.util.List<CD> cdList = query.list();
+
+            transaction.commit();
+            return (List) cdList; 
+            
+		} catch (Exception e) {
+			// TODO: handle exception
+            System.out.println(e.getMessage());
+            System.out.println("error");
+            return null;
+		}
+		
+	}
+    
 }

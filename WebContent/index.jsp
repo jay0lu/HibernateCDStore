@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <%@ page
 	import="com.jwt.hibernate.dao.*, com.jwt.hibernate.bean.*, java.util.*, java.io.*"%>
-<%
- String test = request.getParameter("category");
-			if (test != null ){
-				CDDAO cdDAO = new CDDAO();
-				CD cd = cdDAO.getCDDetails(cdName);
-				cdName = cd.getCdName();
- 
 
-     System.out.println(cdName);
-%>
 
 <html lang="en">
 <head>

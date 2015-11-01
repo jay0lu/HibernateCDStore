@@ -57,4 +57,14 @@ public class CDControllerServlet extends HttpServlet {
         }
  
     }
+    
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    		throws ServletException, IOException {
+    	
+    	    String userPath = request.getServletPath();
+    	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
+        	request.getRequestDispatcher(url).forward(request, response);
+        	
+        	
+    }
 }

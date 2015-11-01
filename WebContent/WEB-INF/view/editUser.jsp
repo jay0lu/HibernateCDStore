@@ -90,9 +90,14 @@
 			<form action="editUser" method="POST">
 				<table cellpadding="3pt">
 					<tr>
-						<td>User Name :</td>
+						<td>First Name :</td>
+						<td><input type="text" name="firstName" size="30"
+							value="<%=user.getFirstName()%>" /></td>
+					</tr>
+					<tr>
+						<td>Last Name :</td>
 						<td><input type="text" name="userName" size="30"
-							value="<%=user.getUserName()%>" /></td>
+							value="<%=user.getLastName()%>" /></td>
 					</tr>
 					<tr>
 						<td>Phone :</td>
