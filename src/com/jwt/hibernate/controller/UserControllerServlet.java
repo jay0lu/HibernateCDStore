@@ -44,7 +44,11 @@ public class UserControllerServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("email", email);
             
-            response.sendRedirect("/HibernateWebApp/success.jsp");
+            
+            String url = "/WEB-INF/view/success.jsp";
+            request.getRequestDispatcher(url).forward(request, response);
+
+//            response.sendRedirect("/HibernateWebApp/success");
             
 //            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 //            dispatcher.forward(request,response);

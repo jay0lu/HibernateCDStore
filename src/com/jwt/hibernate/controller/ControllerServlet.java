@@ -32,25 +32,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         // if checkout page is requested
         } else if (userPath.equals("/checkout")) {
             userPath = "/checkout";
-
-        }else if (userPath.equals("/category-pop")){
-        	userPath = "/category=pop";
-        
-        }else if (userPath.equals("/category-classic")){
-        	userPath = "/category=classic";
-        
-        }else if (userPath.equals("/category-country")){
-        	userPath = "/category=country";
-        
-        }else if (userPath.equals("/category-rnb")){
-        	userPath = "/category=rnb";
-        
-        }else if (userPath.equals("/category-rock")){
-        	userPath = "/category=rock";
-        
-        }else if (userPath.equals("/category-pop")){
-        	userPath = "/category=rock";
-        
         }
         
 
@@ -96,6 +77,8 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         // TODO: Implement language request
     	userPath = "/login";
     	
+    }else if(userPath.equals("/success")){
+    	userPath = "/success";       
     }
 
     // use RequestDispatcher to forward request internally

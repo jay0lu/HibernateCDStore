@@ -6,10 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.*;
+import org.hibernate.annotations.Tables;
+
  
 @Entity
 public class CD {
+
 	@Id @GeneratedValue
     private int cdid;
     
