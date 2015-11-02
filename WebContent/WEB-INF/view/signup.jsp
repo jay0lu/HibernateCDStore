@@ -147,7 +147,6 @@
           <input type="password" required autocomplete="off" name="password" maxlength="15"/>
         </div>
         
-        <input type="submit" name="submitform" value="submit">    
         <button class="button button-block"/>Log In</button>
         
         </form>

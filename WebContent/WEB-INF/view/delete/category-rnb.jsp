@@ -1,23 +1,4 @@
 <!DOCTYPE html>
-<%@ page import="com.jwt.hibernate.dao.*, com.jwt.hibernate.bean.*, java.util.*, java.io.*" %>
-<% 
-//    String category = request.getParameter("category");
-	String firstName = "";
-	String lastName = "";
-	String email="";
-	String phone="";
-	String address="";
-	if (userEmail != null ){
-		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUserDetails(userEmail);
-		firstName = user.getFirstName();
-		lastName = user.getLastName();
-		email = user.getEmail();
-		phone = user.getPhone();
-		address = user.getAddress(); 
-	}
-%>
-
 <html lang="en">
 <head>
 	<title>Category</title>
@@ -117,7 +98,7 @@
                         <ul class="hoverflip">
                           <li>
                             <figure>
-                                <img src="images/pop/pop1.jpg" alt=""/>
+                                <img src="images/rnb/rnb1.jpg" alt=""/>
                                     <figcaption class="caption">
                                         <h2>This Album has:</h2>
                                         <p>
@@ -157,7 +138,7 @@
                         <ul class="hoverflip">
                           <li>
                             <figure>
-                                <img src="images/pop/pop2.jpg" alt=""/>
+                                <img src="images/rnb/rnb2.jpg" alt=""/>
                                     <figcaption class="caption">
                                         <h2>This Album has:</h2>
                                         <p>
@@ -196,7 +177,7 @@
                         <ul class="hoverflip">
                           <li>
                             <figure>
-                                <img src="images/pop/pop3.jpg" alt=""/>
+                                <img src="images/rnb/rnb3.jpg" alt=""/>
                                     <figcaption class="caption">
                                         <h2>This Album has:</h2>
                                         <p>
@@ -235,7 +216,7 @@
                         <ul class="hoverflip">
                           <li>
                             <figure>
-                                <img src="images/pop/pop4.jpg" alt=""/>
+                                <img src="images/rnb/rnb4.jpg" alt=""/>
                                     <figcaption class="caption">
                                         <h2>This Album has:</h2>
                                         <p>
@@ -274,7 +255,7 @@
                         <ul class="hoverflip">
                           <li>
                             <figure>
-                                <img src="images/pop/pop5.jpg" alt=""/>
+                                <img src="images/rnb/rnb5.jpg" alt=""/>
                                     <figcaption class="caption">
                                         <h2>This Album has:</h2>
                                         <p>

@@ -1,27 +1,9 @@
 <!DOCTYPE html>
-<%@ page import="com.jwt.hibernate.dao.*, com.jwt.hibernate.bean.*, java.util.*, java.io.*" %>
-<% 
-	String userEmail= (String) session.getAttribute( "email" ); 
-	String firstName = "";
-	String lastName = "";
-	String email="";
-	String phone="";
-	String address="";
-	if (userEmail != null ){
-		UserDAO userDAO = new UserDAO();
-		User user = userDAO.getUserDetails(userEmail);
-		firstName = user.getFirstName();
-		lastName = user.getLastName();
-		email = user.getEmail();
-		phone = user.getPhone();
-		address = user.getAddress(); 
-	}
-%>
 <html lang="en">
 <head>
-  <title> Success </title>
-  <meta charset="utf-8">
-    
+	<title>Checkout</title>
+	<meta charset="utf-8">
+  
   <!-- this part is added for Bootstrap functionalities ........................ -->
   <!-- adding a meta to ensure proper rendering on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">  
@@ -39,7 +21,7 @@
     <!-- Bootstrap Local CSS -->
     <link rel="stylesheet" href="css/bootstrap.css"/>  
     <!-- Other custom CSS -->
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+  <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <link rel="stylesheet" href="css/effects.css" type="text/css"/>
     
     <!-- Latest jQuery library (local) -->
@@ -56,10 +38,6 @@
 </head>
 <body>
 
-<div id="wrapper">
-
-<div class="bodybg1">
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -73,25 +51,23 @@
       <li><a href="about.html">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="singup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<H1>Details Added Successfully!</H1>
 
 
-<br><b>Summary of added details:</b> 
-<br>First Name: <%= firstName %>
-<br>Last Name: <%= lastName %>
-<br>E-mail: <%= email %>
-<br>Phone: <%= phone %>
-<br>Address: <%= address %>
-
-
+<div class="container-fluid">
+  <h1>Checkout</h1>
+  <p>...
+  </p> 
+             
 </div>
+
+
 <!-- Footer -->
 <!--<hr> -->
 <div class="container-fluid bodybg2" id="footerTitle">
@@ -104,7 +80,6 @@
     </footer>
 </div>
 
-</div>
 
 </body>
 </html>

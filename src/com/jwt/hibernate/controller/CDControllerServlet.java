@@ -26,7 +26,6 @@ public class CDControllerServlet extends HttpServlet {
         int stock = Integer.parseInt(request.getParameter("stock"));
         String img = request.getParameter("img");
         
-        String showcategory = request.getParameter("category");
  
         
         try {
@@ -36,7 +35,7 @@ public class CDControllerServlet extends HttpServlet {
             
             String nextJSP;
             if (success){
-            	nextJSP = "/successCD.jsp";
+            	nextJSP = "/success.jsp";
             }
             else {
             	nextJSP = "/failedCD.jsp";
@@ -44,6 +43,7 @@ public class CDControllerServlet extends HttpServlet {
             
             HttpSession session = request.getSession();
             session.setAttribute("cdName", cdName);
+
             
             //response.sendRedirect("/HibernateWebApp/success.jsp");
             
@@ -58,13 +58,27 @@ public class CDControllerServlet extends HttpServlet {
  
     }
     
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    		throws ServletException, IOException {
-    	
-    	    String userPath = request.getServletPath();
-    	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
-        	request.getRequestDispatcher(url).forward(request, response);
-        	
-        	
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	    String userPath = request.getServletPath();
+	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
+    	request.getRequestDispatcher(url).forward(request, response);
+		
+        String category = request.getParameter("category");
+        
+        System.out.println("category: " + category);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("category", category);
+        
+        System.out.println("Session: " + session.getAttribute("category"));
+        
+        //request.getRequestDispatcher("/HibernateWebApp/category.jsp").forward(request, response);
+        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/category.jsp");
+        //dispatcher.forward(request,response);  
+        
+    	request.getRequestDispatcher(url).forward(request, response);
+        
+	}
+
 }

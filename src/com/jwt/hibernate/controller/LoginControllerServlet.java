@@ -33,30 +33,13 @@ public class LoginControllerServlet extends HttpServlet {
             	HttpSession session = request.getSession();
             	
             	session.setAttribute("sessionId", email);
+                response.sendRedirect("index.jsp");
             	
             	System.out.println("Test get session:" + session.getAttribute("sessionId"));
             } else {
             	//password wrong
             	System.out.println("wrong password");
             }
-            
-            
-//            
-//            String nextJSP;
-//            if (success){
-//            	nextJSP = "/success.jsp";
-//            }
-//            else {
-//            	nextJSP = "/failed.jsp";
-//            }
-////            
-//            HttpSession session = request.getSession();
-//            session.setAttribute("userName", userName);
-//            
-            //response.sendRedirect("/HibernateWebApp/success.jsp");
-//            
-//            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-//            dispatcher.forward(request,response);
             
             
         } catch (Exception e) {

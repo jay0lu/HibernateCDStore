@@ -10,8 +10,8 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-
-import antlr.collections.List;
+import java.util.List;
+//import antlr.collections.List;
 
 import com.jwt.hibernate.bean.CD;
  
@@ -53,7 +53,7 @@ public class CDDAO {
         }
  
     }
-    
+   
     public CD getCDDetails(String cdName) {
         try {
             // 1. configuring hibernate
@@ -68,7 +68,7 @@ public class CDDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CD WHERE cdName ='" + cdName + "'");  // add WHERE cdName to select cd.
+            Query query = session.createQuery("FROM CD WHERE cdName ='" + cdName + "'");
             
             java.util.List<CD> cd = query.list();
 
@@ -85,8 +85,9 @@ public class CDDAO {
  
     }
     
-    public List getAllCD() {
-    	try {
+    public CD getCDDetailsByID(int cdid) {
+        try {
+            // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
         	
             // 2. create sessionfactory
@@ -98,24 +99,26 @@ public class CDDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CD");  
-            java.util.List<CD> cdList = query.list();
+            Query query = session.createQuery("FROM CD WHERE cdid ='" + cdid + "'");
+            
+            java.util.List<CD> cd = query.list();
 
             transaction.commit();
-            return (List) cdList; 
             
-		} catch (Exception e) {
-			// TODO: handle exception
+            
+            return cd.iterator().next();  //select the first one
+ 
+        } catch (HibernateException e) {
             System.out.println(e.getMessage());
             System.out.println("error");
             return null;
-		}
-		
-	}
+        }
+ 
+    }
     
-    
-    public List getcategory(String category) {
-    	try {
+    public List<CD> getAllCD(String category) {
+        try {
+            // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
         	
             // 2. create sessionfactory
@@ -127,19 +130,26 @@ public class CDDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CD WHERE category = '" + category + "'");  
-            java.util.List<CD> cdList = query.list();
-
-            transaction.commit();
-            return (List) cdList; 
             
-		} catch (Exception e) {
-			// TODO: handle exception
+            java.util.List<CD> cdList ;
+            
+            if (category.equals("all")){
+            	Query query = session.createQuery("FROM CD"); 
+                cdList = query.list();
+            }else{
+	            Query query = session.createQuery("FROM CD WHERE category ='" + category + "'"); 
+	            cdList = query.list();
+            }
+            transaction.commit();
+            return cdList; 
+            
+ 
+        } catch (HibernateException e) {
             System.out.println(e.getMessage());
             System.out.println("error");
             return null;
-		}
-		
-	}
+        }
+ 
+    }
     
 }
