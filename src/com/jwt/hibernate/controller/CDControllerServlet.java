@@ -62,7 +62,6 @@ public class CDControllerServlet extends HttpServlet {
 	
 	    String userPath = request.getServletPath();
 	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
-    	request.getRequestDispatcher(url).forward(request, response);
 		
         String category = request.getParameter("category");
         
