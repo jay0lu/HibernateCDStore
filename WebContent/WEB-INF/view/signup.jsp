@@ -146,7 +146,7 @@
           </label>
           <input type="password" required autocomplete="off" name="password" maxlength="15"/>
         </div>
-        
+
         <button class="button button-block"/>Log In</button>
         
         </form>
@@ -159,24 +159,3 @@
 
 
 
-
-<!-- Footer -->
-<!--<hr> -->
-<div class="container-fluid bodybg2" id="footerTitle">
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                Copyright &copy; J2IK 2015
-            </div>
-        </div>
-    </footer>
-</div>
-
-</div>
-
-<!-- this script should be here at the bottom for correct form behaviour -->
-<script src="js/script.js" type="text/javascript" ></script>
-
-
-</body>
-</html>

@@ -34,24 +34,27 @@ public class UserControllerServlet extends HttpServlet {
             System.out.println(success);
             
             if (success){
-            	nextJSP = "/success.jsp";
+            	
+            	HttpSession session = request.getSession();
+                session.setAttribute("email", email);
+                
+                
+                String url = "/WEB-INF/view/success.jsp";
+                request.getRequestDispatcher(url).forward(request, response);
+                
+//              response.sendRedirect("/HibernateWebApp/success");
+                
+//              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+//              dispatcher.forward(request,response);
+                
             	
             }
             else {
-            	nextJSP = "/failed.jsp";
+                String url = "/WEB-INF/view/failed.jsp";
+                request.getRequestDispatcher(url).forward(request, response);
             }
-            
-            HttpSession session = request.getSession();
-            session.setAttribute("email", email);
-            
-            
-            String url = "/WEB-INF/view/success.jsp";
-            request.getRequestDispatcher(url).forward(request, response);
+                      
 
-//            response.sendRedirect("/HibernateWebApp/success");
-            
-//            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-//            dispatcher.forward(request,response);
             
             
         } catch (Exception e) {

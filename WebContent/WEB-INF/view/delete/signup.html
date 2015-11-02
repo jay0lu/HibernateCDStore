@@ -73,24 +73,24 @@
     
     <div class="tab-content">
        
-    <div id="signup"> 
+ <div id="signup"> 
         <h2>Create Your Account Here</h2>
         
-        <form action="checkcredentials.html" method="post">
+        <form action="signup" method="post">
         
         <div class="top-row">
           <div class="field-wrap">
             <label>
               First Name<span class="req">*</span>
             </label>
-            <input type="text" required autocomplete="off" name="firstname" />
+            <input type="text" required autocomplete="off" name="firstName" />
           </div>
       
           <div class="field-wrap">
             <label>
               Last Name<span class="req">*</span>
             </label>
-            <input type="text" required autocomplete="off" name="lastname"/>
+            <input type="text" required autocomplete="off" name="lastName"/>
           </div>
         </div>
 
@@ -112,14 +112,14 @@
           <label>
             Address<span class="req">*</span>
           </label>
-          <input type="text" required autocomplete="off"/>
+          <input type="text" required autocomplete="off" name="address"/>
         </div>     
 
         <div class="field-wrap">
           <label>
             Telephone<span class="req">*</span>
           </label>
-          <input type="tel" required autocomplete="off" name="telephone"/>
+          <input type="tel" required autocomplete="off" name="phone"/>
         </div>
 
         <button type="submit" class="button button-block"/>Register</button>
@@ -128,16 +128,16 @@
     </div>
 
 
-      <div id="login">   
-        <h2>Let's Get Back to Business!</h2>
+  <div id="login">   
+         <h2>Let's Get Back to Business!</h2> 
         
-        <form action="checkcredentials.html" method="post">
+        <form action="login" method="post">
         
           <div class="field-wrap">
           <label>
-            Username<span class="req">*</span>
+            Email<span class="req">*</span>
           </label>
-          <input type="email" required autocomplete="off" name="username"/>
+          <input type="email" required autocomplete="off" name="email"/>
         </div>
         
         <div class="field-wrap">
@@ -146,10 +146,12 @@
           </label>
           <input type="password" required autocomplete="off" name="password" maxlength="15"/>
         </div>
-            
+        
+        <input type="submit" name="submitform" value="submit">    
         <button class="button button-block"/>Log In</button>
         
         </form>
+        
       </div>
 
     </div>

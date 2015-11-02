@@ -32,6 +32,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         // if checkout page is requested
         } else if (userPath.equals("/checkout")) {
             userPath = "/checkout";
+            
+        }else if (userPath.equals("/about")) {
+            // TODO: Implement language request
+        	userPath = "/about";
         }
         
 
@@ -78,7 +82,12 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     	userPath = "/login";
     	
     }else if(userPath.equals("/success")){
-    	userPath = "/success";       
+    	userPath = "/success"; 
+    	
+    }else if (userPath.equals("/signup")) {
+        // TODO: Implement language request
+    	userPath = "/signup";
+    	
     }
 
     // use RequestDispatcher to forward request internally

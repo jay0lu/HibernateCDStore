@@ -1,12 +1,3 @@
-<!-- 
-	<form method = "POST" action="login">
-		email: <input type="text" name="email">
-		password: <input type="password" name="password">
-		<input type="button" value="cancel">
-		<input type="submit" name="submitform" value="submit">
-	</form>
- -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -171,23 +162,3 @@
 
 
 
-<!-- Footer -->
-<!--<hr> -->
-<div class="container-fluid bodybg2" id="footerTitle">
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                Copyright &copy; J2IK 2015
-            </div>
-        </div>
-    </footer>
-</div>
-
-</div>
-
-<!-- this script should be here at the bottom for correct form behaviour -->
-<script src="js/script.js" type="text/javascript" ></script>
-
-
-</body>
-</html>
