@@ -23,40 +23,40 @@
 	int size = cd.size();
 %>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Category</title>
 	<meta charset="utf-8">
 	
-    <!-- this part is added for Bootstrap functionalities ........................ -->
-    <!-- adding a meta to ensure proper rendering on mobile devices -->
+    this part is added for Bootstrap functionalities ........................
+    adding a meta to ensure proper rendering on mobile devices
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <!-- ......................................................................... -->
+    .........................................................................
 
-    <!-- .......................     FROM  CDN     ............................... -->
-    <!-- Latest Bootstrap compiled and minified CSS from CDN-->
-    <!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  -->
-    <!-- Latest compiled and minified Bootstrap JavaScript from CDN -->
-    <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-    <!-- Latest jQuery library from CDN -->
-    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <!-- ......................................................................... -->
+    .......................     FROM  CDN     ...............................
+    Latest Bootstrap compiled and minified CSS from CDN
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+    Latest compiled and minified Bootstrap JavaScript from CDN
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    Latest jQuery library from CDN
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    .........................................................................
 
-    <!-- Bootstrap Local CSS -->
+    Bootstrap Local CSS
     <link rel="stylesheet" href="css/bootstrap.css"/>  
-    <!-- Other custom CSS -->
+    Other custom CSS
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <link rel="stylesheet" href="css/effects.css" type="text/css"/>
     
-    <!-- Latest jQuery library (local) -->
+    Latest jQuery library (local)
     <script src="js/jquery-1.11.3.js"></script>
-    <!-- Latest local Bootstrap JavaScript -->
+    Latest local Bootstrap JavaScript
     <script src="js/bootstrap.js"></script>
-    <!-- Other custom JavaScript -->
+    Other custom JavaScript
     <script src="js/script.js" type="text/javascript" ></script>
 
-    <!-- Google Fonts -->
+    Google Fonts
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
 
@@ -90,7 +90,15 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
+
+
+<%
+/*     String imgURL =  request.getRequestURI();  //("/WebContent/images/pop.jpg");
+    System.out.println(imgURL); */
+//    out.println("<img src =" + imgURL +">");
+%>
+
 
 <div class="container-fluid">
   <div class="row">
@@ -153,17 +161,3 @@
 </div>
 
 
-<!-- Footer -->
-<!--<hr> -->
-<div class="container-fluid bodybg2" id="footerTitle">
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                Copyright &copy; J2IK 2015
-            </div>
-        </div>
-    </footer>
-</div>
-
-</body>
-</html>

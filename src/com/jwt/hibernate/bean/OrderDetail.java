@@ -12,16 +12,16 @@ import org.hibernate.annotations.Columns;
 
  
 @Entity
-public class Order {
+public class OrderDetail {
 	@Id @GeneratedValue
-    private int id;
+	private int id;
     
 	private String userName;
     private String orderDetail;  //cd name and amount
-   
-    @Column(name = "date", columnDefinition="DATETIME")
-    private Date date;
+    private String date;
     private BigDecimal price;
+    private String phoneNumber;
+    private String address;
     
     
 	public int getId() {
@@ -42,10 +42,10 @@ public class Order {
 	public void setOrderDetail(String orderDetail) {
 		this.orderDetail = orderDetail;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public BigDecimal getPrice() {
@@ -53,6 +53,22 @@ public class Order {
 	}
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+	public String getPhoneNumber()
+	{
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber)
+	{
+		this.phoneNumber=phoneNumber;
+	}
+	public String getAddress()
+	{
+		return address;
+	}
+	public void setAddress(String address)
+	{
+		this.address=address;
 	}
  
 

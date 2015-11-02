@@ -2,6 +2,7 @@ package com.jwt.hibernate.dao;
  
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -13,7 +14,8 @@ import org.hibernate.cfg.Configuration;
 
 import antlr.collections.List;
 
-import com.jwt.hibernate.bean.Order;
+import com.jwt.hibernate.bean.CD;
+import com.jwt.hibernate.bean.OrderDetail;
  
 
 public class OrderDAO {
@@ -30,17 +32,19 @@ public class OrderDAO {
         return session;
 	}
 	
-    public boolean addOrderDetails(String userName, String orderDetail, Date date, BigDecimal price) {
+	public boolean addOrderDetails(String userName, String orderDetail, String datetime, BigDecimal price, String phoneNumber, String address) {
         try {
         	
         	Session session = hibernateConfig();
             Transaction transaction = session.beginTransaction();
             
-            Order order = new Order();
+            OrderDetail order = new OrderDetail();
             order.setUserName(userName);
             order.setOrderDetail(orderDetail);
-            order.setDate(date);
+            order.setDate(datetime);
             order.setPrice(price);
+            order.setAddress(address);
+            order.setPhoneNumber(phoneNumber);
             
             session.save(order);
             transaction.commit();
@@ -57,16 +61,16 @@ public class OrderDAO {
  
     }
     
-    public Order getOrderDetails(String id) {
+    public OrderDetail getOrderDetails(String phoneNumber) {
         try { 
             // 3. Get Session object
         	Session session = hibernateConfig();
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
             
-            Query query = session.createQuery("FROM Order where id='" + id + "'");
+            Query query = session.createQuery("FROM Order where phonenumber='" + phoneNumber + "'");
             
-            java.util.List<Order> order = query.list();
+            java.util.List<OrderDetail> order = query.list();
 
             transaction.commit();
             

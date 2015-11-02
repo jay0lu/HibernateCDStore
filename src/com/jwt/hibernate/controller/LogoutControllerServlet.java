@@ -21,7 +21,8 @@ public class LogoutControllerServlet extends HttpServlet {
 
 			HttpSession session = request.getSession();
 
-			session.setAttribute("sessionId", "");
+			session.removeAttribute("usersessionID");
+			session.invalidate();
 			response.sendRedirect("index.jsp");
 
 			System.out.println("Test get session:" + session.getAttribute("sessionId"));
