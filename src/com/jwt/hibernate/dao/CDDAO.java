@@ -137,8 +137,8 @@ public class CDDAO {
             	Query query = session.createQuery("FROM CD"); 
                 cdList = query.list();
             }else{
-	            Query query = session.createQuery("FROM CD WHERE category ='" + category + "'"); 
-	            cdList = query.list();
+            Query query = session.createQuery("FROM CD WHERE category ='" + category + "'"); 
+            cdList = query.list();
             }
             transaction.commit();
             return cdList; 

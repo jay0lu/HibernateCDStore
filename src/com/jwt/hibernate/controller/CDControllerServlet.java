@@ -76,7 +76,11 @@ public class CDControllerServlet extends HttpServlet {
         //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/category.jsp");
         //dispatcher.forward(request,response);  
         
-    	request.getRequestDispatcher(url).forward(request, response);
+      //	request.getRequestDispatcher(url).forward(request, response);
+    	
+          
+         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url); //"/category.jsp"
+         dispatcher.forward(request,response);  
         
 	}
 

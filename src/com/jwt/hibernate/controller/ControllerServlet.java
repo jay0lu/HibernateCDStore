@@ -26,7 +26,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         	userPath = "/category";
         	
         // if cart page is requested
-        } else if (userPath.equals("/viewCart")) {
+        } else if (userPath.equals("/cart")) {
             userPath = "/cart";
 
         // if checkout page is requested
@@ -37,7 +37,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
             // TODO: Implement language request
         	userPath = "/about";
         	
-        	
+        
+        
         }else if (userPath.equals("/Order")) {    //may need to remove after test    
             // TODO: Implement language request
         	userPath = "/Order";
@@ -104,6 +105,10 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     }else if (userPath.equals("/addOrder")) {
         // TODO: Implement language request
     	userPath = "/addOrder";
+    	
+    }else if (userPath.equals("/Order")) {
+        // TODO: Implement language request
+    	userPath = "/Order";
     }
     	
     

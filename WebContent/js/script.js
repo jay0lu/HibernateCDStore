@@ -1,3 +1,62 @@
+/*********************************************************************************************/
+// FOr Cookies Part:
+
+function WriteCookie(name1,value1,price,urlv,qnt1)
+{
+
+	var name="cd"+name1;
+	var value11 = value1.split(' ').join('+');
+	var value=value11+"_"+price+"_"+urlv+"_"+"1";
+		var date = new Date();
+		date.setTime(date.getTime()+(60*60*3000));
+		var expires = "; expires="+date.toGMTString();
+   		document.cookie = name+"="+value+expires+"; path=/"; 
+	
+   	//alert ("cookie="+document.cookie);	
+   	//alert ("cdid="+name1+" is added to your cart!");
+}
+
+function WritetoCookie(name,value1,price,urlv,qnt1)
+{
+	 //qnt="mynumberfield1";
+	 var area = document.getElementById (qnt1);
+   
+	 var value=value1+"_"+price+"_"+urlv+"_"+area.value;
+		var date = new Date();
+		date.setTime(date.getTime()+(60*60*3000));
+		var expires = "; expires="+date.toGMTString();
+   		document.cookie = name+"="+value+expires+"; path=/"; 
+//document.write (document.cookie);
+//alert ("document.cookie"+document.cookie+" value="+area.value);
+
+}
+
+
+function eraseCookie (name1) {
+	var expires = 'Thu, 01 Jan 1970 00:00:01 GMT';
+	//alert ("document.cookie"+document.cookie);
+    document.cookie =name1+"="+";"+expires+"; path=/";	
+	//document.write ("docment cookies : " +document.cookie);
+    location.reload();
+}
+
+
+function createcookie(to ){
+	name="total";
+	var value=to;
+	var date = new Date();
+	date.setTime(date.getTime()+(60*60*3000));
+	var expires = "; expires="+date.toGMTString();
+		document.cookie = name+"="+value+expires+"; path=/";
+		//alert ("cookie="+document.cookie);
+	
+}
+
+function repf(tit){
+	return tit.split('+').join(' ');
+}
+/**********************************************************************************************/
+
 /* For SingUp/Login Form**********************************************************************/
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
@@ -42,4 +101,5 @@ $('.tab a').on('click', function (e) {
   $(target).fadeIn(600);
   
 });
-/*********************************************************************************************/
+/**************************************************************************************************/
+
