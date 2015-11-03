@@ -23,9 +23,9 @@ public class OrderControllerServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-	    String userPath = request.getServletPath();   //
-	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	// 
+//
+//	    String userPath = request.getServletPath();   //
+//	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	// 
 		
 		String userName = request.getParameter("userName");
         String orderDetail = request.getParameter("orderDetails");
@@ -35,7 +35,10 @@ public class OrderControllerServlet extends HttpServlet {
         //HttpSession session = request.getSession();
         //session.setAttribute("date", simpledateformat.format(currenttime));
         //Date date = Date.parse(request.getParameter("date"));
-        BigDecimal price = new BigDecimal(request.getParameter("price"));
+//        BigDecimal price = new BigDecimal(request.getParameter("price"));   
+        BigDecimal price = BigDecimal.valueOf(12); 
+        
+        
         
         HttpSession session = request.getSession();
         session.setAttribute("userName", userName);

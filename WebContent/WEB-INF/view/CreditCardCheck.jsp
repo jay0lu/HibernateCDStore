@@ -1,10 +1,11 @@
 <%@ page import="com.jwt.hibernate.dao.*, com.jwt.hibernate.bean.*, java.util.*, java.io.*, java.math.BigDecimal" %>
 
 <%
-	String username = (String) session.getAttribute("userName");
-	String orderDetail = (String) session.getAttribute("orderDetails");
+	String username = (String) session.getAttribute("sessionId");
 	String datetime = (String) session.getAttribute("datetime");
 	BigDecimal price = (BigDecimal) session.getAttribute("price");
+	
+	System.out.println("credit card check session =" + session.getAttribute("sessionId"));
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,10 +123,6 @@
 		<tr>
 			<td>UserName :</td>
 			<td><input type="text" name="userName" size="40" value="<%= username %>"/></td>
-		</tr>
-		<tr>
-			<td>OrderDetail :</td>
-			<td><input type="text" name="orderDetail" size="40" value="<%= orderDetail%>"/></td>
 		</tr>
 		<tr>
 			<td>DateTime :</td>

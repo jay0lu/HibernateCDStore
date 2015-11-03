@@ -1,7 +1,7 @@
 <%@ page import="com.jwt.hibernate.dao.*, com.jwt.hibernate.bean.*, java.util.*, java.io.*, java.math.BigDecimal" %>
 
 <%
-	String username = (String) session.getAttribute("userName");
+	String username = (String) session.getAttribute("sessionID");
 	String orderDetail = (String) session.getAttribute("orderDetails");
 	String datetime = (String) session.getAttribute("datetime");
 	BigDecimal price = (BigDecimal) session.getAttribute("price");

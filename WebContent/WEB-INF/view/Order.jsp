@@ -99,7 +99,7 @@
 </div>
 
 
-<%  System.out.println("order.jsp session=" + session.getAttribute("sessionID")); %>
+<%  System.out.println("order.jsp session=" + session.getAttribute("sessionId")); %>
 
 
 <h1>Add Order</h1>
