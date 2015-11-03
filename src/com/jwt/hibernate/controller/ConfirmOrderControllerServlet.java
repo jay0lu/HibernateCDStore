@@ -14,21 +14,26 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jwt.hibernate.dao.OrderDAO;
 
-
+/**
+ * Servlet implementation class ConfirmOrderControllerServlet
+ */
 @WebServlet("/ConfirmOrderControllerServlet")
 public class ConfirmOrderControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String url = "/WEB-INF/view/Order.jsp";
-//        request.getRequestDispatcher(url).forward(request, response);
-//	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
+
+	    String userPath = request.getServletPath();   //
+	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	//    
+
+		
 		String userName = request.getParameter("userName");
         String orderDetail = request.getParameter("orderDetails");
         String dateTime = request.getParameter("datetime");
@@ -51,9 +56,11 @@ public class ConfirmOrderControllerServlet extends HttpServlet {
         		nextJSP = "/WEB-INF/view/failedOrder.jsp";
         		System.out.println("Order failed!");
         	}
-        	      
-             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-             dispatcher.forward(request,response);
+        	
+        	
+        	//request.getRequestDispatcher(url).forward(request, response);
+        	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            dispatcher.forward(request,response);
         }
         catch(Exception e){
         	

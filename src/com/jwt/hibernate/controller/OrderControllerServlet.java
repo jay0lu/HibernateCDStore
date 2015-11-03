@@ -19,19 +19,14 @@ import com.jwt.hibernate.dao.OrderDAO;
 @WebServlet("/OrderControllerServlet")
 public class OrderControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
-              String url = "/WEB-INF/view/Order.jsp";
-              request.getRequestDispatcher(url).forward(request, response);
-
-	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
+
+
+	    String userPath = request.getServletPath();   //
+	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	// 
+		
 		String userName = request.getParameter("userName");
         String orderDetail = request.getParameter("orderDetails");
         SimpleDateFormat simpledateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -48,7 +43,9 @@ public class OrderControllerServlet extends HttpServlet {
         session.setAttribute("datetime", datetime);
         session.setAttribute("price", price);
         
-        String nextJSP = "/WEB-INF/view/CreditCardCheck";        
+        String nextJSP;
+        nextJSP = "/WEB-INF/view/CreditCardCheck.jsp";
+        
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
         dispatcher.forward(request,response);
 	}

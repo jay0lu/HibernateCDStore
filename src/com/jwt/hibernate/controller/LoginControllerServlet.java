@@ -20,12 +20,16 @@ public class LoginControllerServlet extends HttpServlet {
  
     	
         String email = request.getParameter("email");
+//        String userName = request.getParameter("userNmae");
         String password = request.getParameter("password");
+        
+        System.out.println("password=" + password);
         
         try {
         	
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getUserDetails(email);
+//            User user = userDAO.getUserDetails(userName);
             if (password.equals(user.getPassword())) {
             	//password correct
             	System.out.println("login success");
@@ -33,7 +37,9 @@ public class LoginControllerServlet extends HttpServlet {
             	HttpSession session = request.getSession();
             	
             	session.setAttribute("sessionId", email);
-                response.sendRedirect("index.jsp");
+//            	session.setAttribute("sessionUserName", userName);
+
+            	response.sendRedirect("index.jsp");
             	
             	System.out.println("Test get session:" + session.getAttribute("sessionId"));
             } else {

@@ -97,6 +97,12 @@
     <url-pattern>/confirmOrder</url-pattern>
   </servlet-mapping>
   
+  <!-- may need to remove after test -->
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/Order</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

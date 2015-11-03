@@ -62,12 +62,39 @@ public class CheckCreditCardServlet extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+	    String userPath = request.getServletPath();   //
+	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	// 
+		
+		String holderName = request.getParameter("holderName");
+		String username = request.getParameter("userName");
+		
+		String nextJSP;
+		
+		try{
+			
+			if(holderName.equals(username))
+			{
+				nextJSP = "/WEB-INF/view/ConfirmOrder.jsp";
+				System.out.println("Yes!!!!");
+			}
+			else
+			{
+				nextJSP = "/WEB-INF/view/Order.jsp";
+				System.out.println("NOOOO!!");
+			}
+			
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+	        dispatcher.forward(request,response);
+        	//request.getRequestDispatcher(url).forward(request, response);
+
+		}catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 	}
 
 }

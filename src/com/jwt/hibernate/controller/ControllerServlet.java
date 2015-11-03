@@ -36,6 +36,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
         }else if (userPath.equals("/about")) {
             // TODO: Implement language request
         	userPath = "/about";
+        	
+        	
+        }else if (userPath.equals("/Order")) {    //may need to remove after test    
+            // TODO: Implement language request
+        	userPath = "/Order";
         }
         
 
@@ -88,7 +93,20 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         // TODO: Implement language request
     	userPath = "/signup";
     	
+    }else if (userPath.equals("/confirmOrder")) {
+        // TODO: Implement language request
+    	userPath = "/confirmOrder";
+    	
+    }else if (userPath.equals("/checkCreditCard")) {
+        // TODO: Implement language request
+    	userPath = "/checkCreditCard";
+
+    }else if (userPath.equals("/addOrder")) {
+        // TODO: Implement language request
+    	userPath = "/addOrder";
     }
+    	
+    
 
     // use RequestDispatcher to forward request internally
     String url = "/WEB-INF/view" + userPath + ".jsp";
