@@ -55,6 +55,11 @@
     <servlet-name>ConfirmOrder</servlet-name>
     <servlet-class>com.jwt.hibernate.controller.ConfirmOrderControllerServlet</servlet-class>
   </servlet>
+  <servlet>
+    <display-name>EditUser</display-name>
+    <servlet-name>EditUser</servlet-name>
+    <servlet-class>com.jwt.hibernate.controller.EditUserControllerServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>User</servlet-name>
@@ -100,11 +105,13 @@
     <servlet-name>Controller</servlet-name>
     <url-pattern>/cart</url-pattern>
   </servlet-mapping>
-  
-  <!-- may need to remove after test -->
   <servlet-mapping>
     <servlet-name>Controller</servlet-name>
     <url-pattern>/Order</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>EditUser</servlet-name>
+    <url-pattern>/editUser</url-pattern>
   </servlet-mapping>
  
   

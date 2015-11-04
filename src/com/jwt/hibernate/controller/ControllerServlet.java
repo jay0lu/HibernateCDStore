@@ -109,7 +109,11 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     }else if (userPath.equals("/Order")) {
         // TODO: Implement language request
     	userPath = "/Order";
+    }else if (userPath.equals("/editUser")) {
+        // TODO: Implement language request
+    	userPath = "/editUser";
     }
+    
     	
     
 

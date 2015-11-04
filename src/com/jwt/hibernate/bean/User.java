@@ -1,15 +1,13 @@
 package com.jwt.hibernate.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-import org.hibernate.annotations.Table;
  
 @Entity
+@Table(name="User")
 public class User {
-	@Id @GeneratedValue
-    private int id;
+
+	private int id;
     
 	private String firstName;
 	private String lastName;
@@ -18,6 +16,8 @@ public class User {
     private String phone;
     private String address;
  
+	@Id @GeneratedValue
+	@Column(name="id", nullable=false)
     public int getId() {
         return id;
     }
@@ -27,6 +27,7 @@ public class User {
     }
 
  
+    @Column(name="firstName", nullable=false)
     public String getFirstName() {
 		return firstName;
 	}
@@ -35,6 +36,7 @@ public class User {
 		this.firstName = firstName;
 	}
 
+	@Column(name="lastName", nullable=false)
 	public String getLastName() {
 		return lastName;
 	}
@@ -43,14 +45,17 @@ public class User {
 		this.lastName = lastName;
 	}
 
+	@Column(name="password", nullable=false)
 	public String getPassword() {
         return password;
     }
  
+	
     public void setPassword(String password) {
         this.password = password;
     }
  
+    @Column(name="email", nullable=false, unique=true)
     public String getEmail() {
         return email;
     }
@@ -59,6 +64,7 @@ public class User {
         this.email = email;
     }
  
+    @Column(name="phone", nullable=false)
     public String getPhone() {
         return phone;
     }
@@ -67,6 +73,7 @@ public class User {
         this.phone = phone;
     }
  
+    @Column(name="address", nullable=false)
     public String getAddress() {
         return address;
     }

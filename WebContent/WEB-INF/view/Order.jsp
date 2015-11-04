@@ -7,81 +7,16 @@
 <%@ page import="java.util.*, java.io.*"%>
 <%@ page import="java.util.List"%>
 
-<%String tit="",price="",urlm="",qnty=""; %>
-<%  String email =  (String) session.getAttribute("sessionId"); %>
-<%  System.out.println("get session email =" + session.getAttribute("sessionId")); %>
-
-              
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Order</title>
-	<meta charset="utf-8">
-	
-	<!-- this part is added for Bootstrap functionalities ........................ -->
-	<!-- adding a meta to ensure proper rendering on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">	
-	<!-- ......................................................................... -->
-
-    <!-- .......................     FROM  CDN     ............................... -->
-    <!-- Latest Bootstrap compiled and minified CSS from CDN-->
-    <!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  -->
-    <!-- Latest compiled and minified Bootstrap JavaScript from CDN -->
-    <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-    <!-- Latest jQuery library from CDN -->
-    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-	<!-- ......................................................................... -->
-
-    <!-- Bootstrap Local CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css"/>  
-    <!-- Other custom CSS -->
-	<link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <link rel="stylesheet" href="css/effects.css" type="text/css"/>
-    
-    <!-- Latest jQuery library (local) -->
-    <script src="js/jquery-1.11.3.js"></script>
-    <!-- Latest local Bootstrap JavaScript -->
-    <script src="js/bootstrap.js"></script>
-    <!-- Other custom JavaScript -->
-    <script src="js/script.js" type="text/javascript" ></script>
-
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
 
 
-</head>
-<body>
+<%
+String[][] id= new String [30][2];
+BigDecimal total = BigDecimal.ZERO;
+%>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" id="ourbrand" href="#">J2IK CD Store</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-		  <li class="active"><a href="index.jsp">Home</a></li>
-		  <li><a href="/HibernateWebApp/category?category=all">Category</a></li>
-		  <li><a href="cart">Cart</a></li>
-		  <li><a href="about">About</a></li>
-      </ul>
-      <% 
-						System.out.println("check login session = " + session.getAttribute("sessionId"));
-						
-						if(session.getAttribute("sessionId") == null){
-								out.println("<script>alert('Please Login');window.location.href='https://localhost:8443/HibernateWebApp/login';</script>");
-								
-							}else {
-							    out.println(" <ul class='nav navbar-nav navbar-right'> ");
-							    out.println(" <li>" + session.getAttribute("sessionId") + " </li> ");
-							    out.println(" <li><a href='logout'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li> ");
-							    out.println(" </ul> ");
-							} 
-							
-							%>
-    </div>
-  </div>
-</nav>
+
+
+
 
 
 <div class="container-fluid">
@@ -99,17 +34,72 @@
 </div>
 
 
-<%  System.out.println("order.jsp session=" + session.getAttribute("sessionId")); %>
+<%
+
+Cookie[] cdc=request.getCookies();  
+
+int i=0;
+String tt="0";
+String qnty="0";
+int cc=0; 
+
+
+  
+for(Cookie cookie : cdc){
+   
+    if(cookie.getName().equals("total")){
+            
+          tt = cookie.getValue();}else{
+        	  //--- to get quantity
+        	 qnty="0";
+  
+    if((cookie.getName().substring(0,2).equals("cd"))){
+        
+         cc=0;
+        	   for(int j=0; j<cookie.getValue().length(); j++) {
+               if (cookie.getValue().charAt(j)=='_'){ cc++;}
+                else {if (cc==3){qnty =qnty+ cookie.getValue().charAt(j);}}
+                 }
+                 id[i][0]=cookie.getName().substring(2);
+                 id[i][1]=qnty; %>
+                 <td >
+               <p> cdid= <%=id[i][0] %> quantity  <%=id[i][1] %></p>
+              </td>
+                 
+                 <%i++;}                   
+        }
+        	  
+     //--------------   	  
+          }
+                                 
+                       	
+        	// String s = "1.01";
+        	 BigDecimal big = new BigDecimal(tt);
+        	total= total.add(big);
+        	
+           %>
+           
+        
+              <td >
+               <p>  <%=tt %> </p>
+              </td>
+
 
 
 <h1>Add Order</h1>
 	<form action="addOrder" method="post">
 		<table cellpadding="3pt">
 			<tr>
-				<td>Email :<%= email %></td>
+				<td>User Name :</td>
+				<td><input type="text" name="userName" size="30" /></td>
+			</tr>
+    		<tr>
+				<td>Detail :</td>
+				<td><input type="text" name="orderDetails" /></td>
 			</tr>
   			<tr>
-				<td>Price :<%  %>></td>  // price from shopping cart
+				<td>Price :</td>
+				<td><input type="number" name="price" min="0" /></td>
 			</tr>
     		<tr>
     			<td>Date :</td>
@@ -126,17 +116,3 @@
 	</form>
 
 
-<!-- Footer -->
-<!--<hr> -->
-<div class="container-fluid bodybg2" id="footerTitle">
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                Copyright &copy; J2IK 2015
-            </div>
-        </div>
-    </footer>
-</div>
-
-</body>
-</html>

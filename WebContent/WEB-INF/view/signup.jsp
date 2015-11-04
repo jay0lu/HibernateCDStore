@@ -49,14 +49,14 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="category.html">Category</a></li>
-      <li><a href="cart.html">Cart</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.jsp">Home</a></li>
+      <li><a href="category?category=all">Category</a></li>
+      <li><a href="cart">Cart</a></li>
+      <li><a href="about">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="singup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li class="active"><a href="singup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>

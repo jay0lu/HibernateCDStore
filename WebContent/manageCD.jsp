@@ -1,12 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+
 <%@page import="java.math.BigDecimal"%>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Manage CD</title>
-</head>
-<body>
+
 	<h1>Add CD</h1>
 	<form action="addCD" method="post">
 		<table cellpadding="3pt">
@@ -76,5 +70,3 @@
 	</script>
 
 
-</body>
-</html>

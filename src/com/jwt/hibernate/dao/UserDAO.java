@@ -80,28 +80,14 @@ public class UserDAO {
  
     }
     
-    public boolean changeUserDetails(String email, String address) {
-    	try {
-        	Session session = hibernateConfig();
-            Transaction transaction = session.beginTransaction();
-            
-            User user = (User)session.get(User.class, email); 
-         user.setAddress( address );
-         session.update(user); 
-         transaction.commit();
-            
-    	} catch (Exception e) {
-    		
-    	}
-    	return true;
-    }
     
-    public boolean changeUserDetails(String email, String firstName, String lastName, String phone, String address) {
+    public boolean changeUserDetails(Integer id, String email, String firstName, String lastName, String phone, String address) {
     	try {
         	Session session = hibernateConfig();
             Transaction transaction = session.beginTransaction();
             
-            User user = (User)session.get(User.class, 1);
+
+            User user = (User)session.get(User.class, id);
             user.setAddress(address);
             user.setFirstName(firstName);
             user.setLastName(lastName);
@@ -109,10 +95,13 @@ public class UserDAO {
 
             session.update(user);
             transaction.commit();
+            
+            return true;
 
     	} catch (Exception e) {
-    		
-    	}
-    	return true;
+    		System.out.println(e.getMessage());
+            System.out.println("error");
+            return false;
+    	}    	
     }
 }

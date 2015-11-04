@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.encrypt.encrypt;
 import com.jwt.hibernate.bean.User;
 import com.jwt.hibernate.dao.UserDAO;
  
@@ -20,24 +21,28 @@ public class LoginControllerServlet extends HttpServlet {
  
     	
         String email = request.getParameter("email");
-//        String userName = request.getParameter("userNmae");
         String password = request.getParameter("password");
-        
-        System.out.println("password=" + password);
-        
+
+                
         try {
         	
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getUserDetails(email);
-//            User user = userDAO.getUserDetails(userName);
-            if (password.equals(user.getPassword())) {
+
+            //decrypted password
+            String encryptedData = String.valueOf(user.getPassword());
+            String secretKey = "J2IKJ2IK";
+            String decryptedData = encrypt.decipher(secretKey, encryptedData);  
+            System.out.println("password=" + decryptedData);
+
+            if (password.equals(decryptedData)) {
             	//password correct
             	System.out.println("login success");
             	
             	HttpSession session = request.getSession();
             	
             	session.setAttribute("sessionId", email);
-//            	session.setAttribute("sessionUserName", userName);
+//            	session.setAttribute("sessionUserID", id);
 
             	response.sendRedirect("index.jsp");
             	
