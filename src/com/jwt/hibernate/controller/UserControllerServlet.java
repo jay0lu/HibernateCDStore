@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.encrypt.encrypt;
 import com.jwt.hibernate.dao.UserDAO;
  
 public class UserControllerServlet extends HttpServlet {
@@ -25,42 +26,55 @@ public class UserControllerServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         
-        
+        //encrypt password
+        String secretKey  = "J2IKJ2IK";
+        String data = password;
         try {
-            UserDAO userDAO = new UserDAO();
-            boolean success = userDAO.addUserDetails(firstName, lastName, password, email, phone, address);
-            
-            String nextJSP;
-            System.out.println(success);
-            
-            if (success){
-            	
-            	HttpSession session = request.getSession();
-                session.setAttribute("email", email);
-                
-                
-                String url = "/WEB-INF/view/success.jsp";
-                request.getRequestDispatcher(url).forward(request, response);
-                
-//              response.sendRedirect("/HibernateWebApp/success");
-                
-//              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-//              dispatcher.forward(request,response);
-                
-            	
-            }
-            else {
-                String url = "/WEB-INF/view/failed.jsp";
-                request.getRequestDispatcher(url).forward(request, response);
-            }
-                      
+			String encryptedData = encrypt.cipher(secretKey, data);
+			//System.out.println(encryptedData);
+			
+			try {
+	            UserDAO userDAO = new UserDAO();
+	            boolean success = userDAO.addUserDetails(firstName, lastName, encryptedData, email, phone, address);
+	            
+	            String nextJSP;
+	            System.out.println(success);
+	            
+	            if (success){
+	            	
+	            	HttpSession session = request.getSession();
+	                session.setAttribute("email", email);
+	                
+	                
+	                String url = "/WEB-INF/view/success.jsp";
+	                request.getRequestDispatcher(url).forward(request, response);
+	                
+//	              response.sendRedirect("/HibernateWebApp/success");
+	                
+//	              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+//	              dispatcher.forward(request,response);
+	                
+	            	
+	            }
+	            else {
+	                String url = "/WEB-INF/view/failed.jsp";
+	                request.getRequestDispatcher(url).forward(request, response);
+	            }
+	                      
 
-            
-            
-        } catch (Exception e) {
- 
-            e.printStackTrace();
-        }
+	            
+	            
+	        } catch (Exception e) {
+	 
+	            e.printStackTrace();
+	        }
+			
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        
+        
  
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
