@@ -36,7 +36,7 @@ public class OrderDetail {
 		this.userName = userName;
 	}
 	
-    @Column(name="orderDetail", nullable=false)
+    @Column(name="orderDetail")
 	public String getOrderDetail() {
 		return orderDetail;
 	}
@@ -44,7 +44,7 @@ public class OrderDetail {
 		this.orderDetail = orderDetail;
 	}
 	
-    @Column(name="date", nullable=false)
+    @Column(name="date")
 	public String getDate() {
 		return date;
 	}
