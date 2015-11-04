@@ -50,6 +50,8 @@ public class LoginControllerServlet extends HttpServlet {
             } else {
             	//password wrong
             	System.out.println("wrong password");
+            	String url = "/WEB-INF/view/failed.jsp";
+                request.getRequestDispatcher(url).forward(request, response);
             }
             
             

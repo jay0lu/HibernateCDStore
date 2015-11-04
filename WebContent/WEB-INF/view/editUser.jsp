@@ -5,7 +5,7 @@
 
 <%
         String userEmail = (String) session.getAttribute("sessionId");
-		System.out.println(userEmail);
+//		System.out.println(userEmail);
         if(session.getAttribute("sessionId") == null){
 				out.println("<script>alert('Please Login');window.location.href='https://localhost:8443/HibernateWebApp/login';</script>");
         }

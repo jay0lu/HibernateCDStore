@@ -45,6 +45,8 @@ public class EditUserControllerServlet extends HttpServlet {
         Integer id = user.getId();
         userDAO.changeUserDetails(id, email, firstName, lastName, phone, address);
 		
+        String url = "/WEB-INF/view/success.jsp";
+        request.getRequestDispatcher(url).forward(request, response);
 	}
 
 }
