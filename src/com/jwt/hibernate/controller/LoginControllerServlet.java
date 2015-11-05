@@ -58,6 +58,10 @@ public class LoginControllerServlet extends HttpServlet {
         } catch (Exception e) {
  
             e.printStackTrace();
+            
+            System.out.println("DES decode problem");
+        	String url = "/WEB-INF/view/failed.jsp";
+            request.getRequestDispatcher(url).forward(request, response);
         }
  
     }

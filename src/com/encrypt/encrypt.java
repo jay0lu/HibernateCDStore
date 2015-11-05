@@ -75,26 +75,26 @@ public class encrypt {
 
    
     
-    /**
-     * Quick test
-     * @param args
-     */
-    public static void main(String[] args) {
-        try {
-
-            String secretKey    = "01234567";
-            String data="test";
-            String encryptedData = cipher(secretKey, data);
-
-            System.out.println("encryptedData: " + encryptedData);
-
-            String decryptedData = decipher(secretKey, encryptedData);
-
-            System.out.println("decryptedData: " + decryptedData);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    /**
+//     * Quick test
+//     * @param args
+//     */
+//    public static void main(String[] args) {
+//        try {
+//
+//            String secretKey  = "J2IKJ2IK";
+//            String data="t";
+//            String encryptedData = cipher(secretKey, data);
+//
+//            System.out.println("encryptedData: " + encryptedData);
+//
+//            String decryptedData = decipher(secretKey, encryptedData);
+//
+//            System.out.println("decryptedData: " + decryptedData);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 }
