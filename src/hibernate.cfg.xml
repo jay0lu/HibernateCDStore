@@ -13,9 +13,8 @@
   <property name="hibernate.connection.pool_size">10</property>
 
   <mapping class="com.jwt.hibernate.bean.CD"/>
-  <mapping class="com.jwt.hibernate.bean.User"/>  
+  <mapping class="com.jwt.hibernate.bean.User"/> 
   <mapping class="com.jwt.hibernate.bean.OrderDetail"/>  
-  
   
   
  </session-factory>

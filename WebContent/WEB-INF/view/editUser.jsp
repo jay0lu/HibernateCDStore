@@ -5,7 +5,7 @@
 
 <%
         String userEmail = (String) session.getAttribute("sessionId");
-		System.out.println(userEmail);
+//		System.out.println(userEmail);
         if(session.getAttribute("sessionId") == null){
 				out.println("<script>alert('Please Login');window.location.href='https://localhost:8443/HibernateWebApp/login';</script>");
         }
@@ -30,7 +30,7 @@
 					</tr>
 					<tr>
 						<td>Last Name :</td>
-						<td><input type="text" name="userName" size="30"
+						<td><input type="text" name="lastName" size="30"
 							value="<%=user.getLastName()%>" /></td>
 					</tr>
 					<tr>
@@ -54,23 +54,3 @@
 
 
 
-
-
-
-
-
-		</div>
-		<!-- Footer -->
-		<!--<hr> -->
-		<div class="container-fluid bodybg2" id="footerTitle">
-			<footer>
-			<div class="row">
-				<div class="col-lg-12">Copyright &copy; J2IK 2015</div>
-			</div>
-			</footer>
-		</div>
-
-	</div>
-
-</body>
-</html>

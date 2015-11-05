@@ -27,7 +27,8 @@ public class UserControllerServlet extends HttpServlet {
         String address = request.getParameter("address");
         
         //encrypt password
-        String secretKey  = "J2IKJ2IK";
+//        int randomPIN = (int)(Math.random()*9000)+1000;
+        String secretKey  = "J2IKJ2IK";    // + randomPIN;
         String data = password;
         try {
 			String encryptedData = encrypt.cipher(secretKey, data);

@@ -28,11 +28,12 @@ public class LoginControllerServlet extends HttpServlet {
         	
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getUserDetails(email);
+
             //decrypted password
             String encryptedData = String.valueOf(user.getPassword());
             String secretKey = "J2IKJ2IK";
             String decryptedData = encrypt.decipher(secretKey, encryptedData);  
-            //System.out.println("password=" + decryptedData);
+            System.out.println("password=" + decryptedData);
 
             if (password.equals(decryptedData)) {
             	//password correct
@@ -41,7 +42,7 @@ public class LoginControllerServlet extends HttpServlet {
             	HttpSession session = request.getSession();
             	
             	session.setAttribute("sessionId", email);
-//            	session.setAttribute("sessionUserName", userName);
+//            	session.setAttribute("sessionUserID", id);
 
             	response.sendRedirect("index.jsp");
             	
@@ -49,6 +50,8 @@ public class LoginControllerServlet extends HttpServlet {
             } else {
             	//password wrong
             	System.out.println("wrong password");
+            	String url = "/WEB-INF/view/failed.jsp";
+                request.getRequestDispatcher(url).forward(request, response);
             }
             
             
