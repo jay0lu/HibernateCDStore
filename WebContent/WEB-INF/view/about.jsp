@@ -9,7 +9,6 @@
             This project is an implementation of an online CD store. It has common features of a typical e-commerce website by providing functions like browsing categories, looking into the list of available albums provided in each category and their details, adding items to shopping cart, submitting order and other related functions as well. The team has spent a lot of time in learning all the needed technologies for implementing this J2EE project and has developed everything from scratch based on the MVC architecture. <br/> Considering the limited time for this phase of the project we believe we have done our best to fulfill the requirements for part 1 of the project.
         </p>
         </div>
-    </div>
 </div>
 
 <p><br/></p>

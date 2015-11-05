@@ -246,3 +246,4 @@
 /.settings/
 *.class
 >>>>>>> origin/master
+/build/

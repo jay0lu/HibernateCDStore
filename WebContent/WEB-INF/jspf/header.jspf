@@ -1,5 +1,6 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 
@@ -72,11 +73,7 @@
 							    out.println(" </ul> ");
 							}else {
 							    out.println(" <ul class='nav navbar-nav navbar-right'> ");
-<<<<<<< HEAD
 							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </li> ");
-=======
-							    out.println(" <li><a href='editUser'>" + session.getAttribute("sessionId") + " </li> ");
->>>>>>> origin/master
 							    out.println(" <li><a href='logout'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li> ");
 							    out.println(" </ul> ");
 							} 
