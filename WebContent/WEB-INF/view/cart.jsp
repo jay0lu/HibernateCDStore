@@ -13,7 +13,7 @@
 	List<CD> cd = cdDao.getAllCD(category);
 %>
 <%
-String tit="",price="",urlm="",qnty="",stotal="",bid="myid";
+String tit="",price="",urlm="",qnty="",stotal="",bid="myid", bttn="",bttn2="";
 BigDecimal total = BigDecimal.ZERO;
 BigDecimal temp = BigDecimal.ZERO;
 %>
@@ -25,7 +25,7 @@ BigDecimal temp = BigDecimal.ZERO;
 <div class="container-fluid">
 	<div class="col-md-11">
 		<div class="jumbotron jumbotron-bg1">
-			<h2 id="firstheading">Welcome <% session.getAttribute("sessionId"); %>></h2>
+			<h2 id="firstheading"> <% session.getAttribute("sessionId"); %>></h2>
 			<p id="firstpar">Like the items in your cart?! Why don't you go
 				ahead and Check them out?</p>
 		</div>
@@ -74,15 +74,16 @@ for(Cookie cookie : cdc){
         }
          
          bid="myid"+ Integer.toString(i);
-       
+       bttn="umyb"+ Integer.toString(i);
+       bttn2="myb"+ Integer.toString(i);
         	 tit=tt.replaceAll("\\+"," ");
         	
-        	// String s = "1.01";
-        	
-         	 BigDecimal big = new BigDecimal(price);
+        	 //Double x=Double.parseDouble(price);
+        	BigDecimal big = new BigDecimal(price);
         	 BigDecimal qnt = new BigDecimal(qnty);
         	 big=big.multiply(qnt);
         	total= total.add(big);
+        	//total= total.add(90.000);
         	
            %>
 
@@ -91,12 +92,12 @@ for(Cookie cookie : cdc){
 					<td><%=price%></td>
 					<td><input class="mytextbox" type="number" name='x' size="3"
 						max="100" min="0" value="<%=qnty%>" id='<%=bid %>' /></td>
-					<td><input class="myButton2" type="button" value="Update"
-						onclick="WritetoCookie('<%=cookie.getName()%>','<%=tit %>','<%=price%>','<%=urlm %>','<%=bid %>')" />
+					<td><input class="myButton2" type="button" value="Update" id='<%=bttn %>'
+						onclick="WritetoCookie('<%=cookie.getName()%>','<%=tit %>','<%=price%>','<%=urlm %>','<%=bid %>','<%=total %>')" />
 
 					</td>
-					<td><input class="myButton2" type="button" value="Remove"
-						onclick="eraseCookie('<%=cookie.getName()%>' )" /></td>
+					<td><input class="myButton2" type="button" value="Remove" id='<%=bttn2 %>'
+						onclick="eraseCookie('<%=cookie.getName()%>','<%=bttn2 %>' )" /></td>
 				</tr>
 
 
@@ -125,7 +126,7 @@ for(Cookie cookie : cdc){
 		<%stotal=total.toString(); %>
 		<p>
 			Total price:
-		    <%=stotal%>
+			<%=stotal%>
 		</p>
 		<p>Checkout
 		<form action="Order" method="post">
