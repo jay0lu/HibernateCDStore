@@ -19,9 +19,6 @@ BigDecimal temp = BigDecimal.ZERO;
 %>
 
 
-
-<% System.out.println("cart session= " + session.getAttribute("sessionId")); %>
-
 <div class="container-fluid">
 	<div class="col-md-11">
 		<div class="jumbotron jumbotron-bg1">

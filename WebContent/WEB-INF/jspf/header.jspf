@@ -63,7 +63,6 @@
 							<li><a href="about">About</a></li>
 						</ul>
 						<% 
-						System.out.println("session = " + session.getAttribute("sessionId"));
 						
 						if(session.getAttribute("sessionId") == null){
 								//out.println("<script>alert('Please Login');window.location.href='https://localhost:8443/HibernateWebApp/login';</script>");

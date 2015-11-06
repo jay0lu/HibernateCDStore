@@ -72,7 +72,7 @@
 								
 							}else {
 							    out.println(" <ul class='nav navbar-nav navbar-right'> ");
-							    out.println(" <li>" + session.getAttribute("sessionId") + " </li> ");
+							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </li> ");
 							    out.println(" <li><a href='logout'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li> ");
 							    out.println(" </ul> ");
 							} 

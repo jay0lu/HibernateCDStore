@@ -68,7 +68,7 @@
 								
 							}else {
 							    out.println(" <ul class='nav navbar-nav navbar-right'> ");
-							    out.println(" <li>" + session.getAttribute("sessionId") + " </li> ");
+							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </li> ");
 							    out.println(" <li><a href='logout'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li> ");
 							    out.println(" </ul> ");
 							} 
@@ -102,15 +102,15 @@
 		<table cellpadding="3pt">
 		<tr>
 			<td>CardNumber :</td>
-			<td><input class="input" type="number" name="cardNumber" size="40" min="0" max="50"/></td>
+			<td><input class="input" type="number" name="cardNumber"/></td>
 		</tr>
 		<tr>
 			<td>CardPassword :</td>
-			<td><input type="password" name="cardPassword" size="40"/></td>
+			<td><input type="password" name="cardPassword" /></td>
 		</tr>
 		<tr>
 			<td>BankName :</td>
-			<td><input type="text" name="bankName" size="40"/></td>
+			<td><input type="text" name="bankName" /></td>
 		</tr>
 		<tr>
 			<td>HolderName :</td>
@@ -118,19 +118,19 @@
 		</tr>
 		<tr>
 			<td>MaxLimit :</td>
-			<td><input type="text" name="maxLimit" size="40"/></td>
+			<td><input type="text" name="maxLimit" /></td>
 		</tr>
 		<tr>
-			<td>UserName :</td>
-			<td><input type="text" name="userName" size="40" value="<%= username %>"/></td>
+			<td>Email :</td>
+			<td><input type="text" name="userName" size="40" value="<%=session.getAttribute("sessionId") %>"/></td>
 		</tr>
 		<tr>
 			<td>DateTime :</td>
-			<td><input type="text" name="dateTime" size="40" value="<%= datetime%>"/></td>
+			<td><input readonly name="dateTime" value="<%= datetime%>"/></td>
 		</tr>
 		<tr>
 			<td>Price :</td>
-			<td><input type="number" name="price" size="40" min="0" max="50" value="<%= price%>"/></td>
+			<td><input readonly name="price" value="<%= price%>"/></td>
 		</tr>
 		</table>
 		<input type="submit" value="Submit" />

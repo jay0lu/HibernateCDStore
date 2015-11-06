@@ -8,15 +8,10 @@
 <%@ page import="java.util.List"%>
 
 
-
 <%
 String[][] id= new String [30][2];
 BigDecimal total = BigDecimal.ZERO;
 %>
-
-
-
-
 
 
 <div class="container-fluid">
@@ -33,17 +28,14 @@ BigDecimal total = BigDecimal.ZERO;
     </div>
 </div>
 
+<h1>Add Order</h1>
 
 <%
-
 Cookie[] cdc=request.getCookies();  
-
 int i=0;
 String tt="0";
 String qnty="0";
 int cc=0; 
-
-
   
 for(Cookie cookie : cdc){
    
@@ -80,26 +72,20 @@ for(Cookie cookie : cdc){
            %>
            
         
-              <td >
-               <p>  <%=tt %> </p>
-              </td>
 
-
-
-<h1>Add Order</h1>
 	<form action="addOrder" method="post">
 		<table cellpadding="3pt">
 			<tr>
-				<td>User Name :</td>
-				<td><input type="text" name="userName" size="30" /></td>
+				<td>Email :</td>
+				<td><input readonly name="userName" value=<%=session.getAttribute("sessionId") %> /></td>
 			</tr>
-    		<tr>
+      <!--  <tr>
 				<td>Detail :</td>
 				<td><input type="text" name="orderDetails" /></td>
 			</tr>
-  			<tr>
+  			<tr>   -->   
 				<td>Price :</td>
-				<td><input type="number" name="price" min="0" /></td>
+				<td><input readonly name="price" value=<%=tt %> /></td>
 			</tr>
     		<tr>
     			<td>Date :</td>
@@ -114,5 +100,3 @@ for(Cookie cookie : cdc){
 		</table>
 		<input type="submit" value="Add Order" />
 	</form>
-
-

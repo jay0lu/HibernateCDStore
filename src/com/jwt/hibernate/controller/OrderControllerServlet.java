@@ -32,15 +32,12 @@ public class OrderControllerServlet extends HttpServlet {
         SimpleDateFormat simpledateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date currenttime = new Date();
         String datetime = simpledateformat.format(currenttime);
-        //HttpSession session = request.getSession();
-        //session.setAttribute("date", simpledateformat.format(currenttime));
-        //Date date = Date.parse(request.getParameter("date"));
-//        BigDecimal price = new BigDecimal(request.getParameter("price"));   
-        BigDecimal price = BigDecimal.valueOf(12); 
-        
-        
         
         HttpSession session = request.getSession();
+        //session.setAttribute("date", simpledateformat.format(currenttime));
+//        Date date = Date.parse(request.getParameter("date"));
+        BigDecimal price = new BigDecimal(request.getParameter("price"));   
+      
         session.setAttribute("userName", userName);
         session.setAttribute("orderDetails", orderDetail);
         session.setAttribute("datetime", datetime);
