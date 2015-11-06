@@ -78,7 +78,8 @@ for(Cookie cookie : cdc){
         	 tit=tt.replaceAll("\\+"," ");
         	
         	// String s = "1.01";
-        	 BigDecimal big = new BigDecimal(price);
+        	
+         	 BigDecimal big = new BigDecimal(price);
         	 BigDecimal qnt = new BigDecimal(qnty);
         	 big=big.multiply(qnt);
         	total= total.add(big);
@@ -124,7 +125,7 @@ for(Cookie cookie : cdc){
 		<%stotal=total.toString(); %>
 		<p>
 			Total price:
-			<%=stotal%>
+		    <%=stotal%>
 		</p>
 		<p>Checkout
 		<form action="Order" method="post">
