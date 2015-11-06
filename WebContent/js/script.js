@@ -12,6 +12,7 @@ function WriteCookie(name1,value1,price,urlv,qnt1)
         var expires = "; expires="+date.toGMTString();
         document.cookie = name+"="+value+expires+"; path=/"; 
      
+        alert("CD added.")
     //alert ("cookie="+document.cookie);    
     //alert ("cdid="+name1+" is added to your cart!");
 }

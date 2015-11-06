@@ -20,12 +20,12 @@ BigDecimal temp = BigDecimal.ZERO;
 
 
 
-<% System.out.println("cart session= " + session.getAttribute("sessionID")); %>>
+<% System.out.println("cart session= " + session.getAttribute("sessionId")); %>>
 
 <div class="container-fluid">
 	<div class="col-md-11">
 		<div class="jumbotron jumbotron-bg1">
-			<h2 id="firstheading"> <% session.getAttribute("sessionID"); %>></h2>
+			<h2 id="firstheading">Welcome <% session.getAttribute("sessionId"); %>></h2>
 			<p id="firstpar">Like the items in your cart?! Why don't you go
 				ahead and Check them out?</p>
 		</div>
