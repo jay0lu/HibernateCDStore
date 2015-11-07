@@ -11,5 +11,12 @@
 
 </div>
 
+<!-- Latest jQuery library (local) -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- Latest local Bootstrap JavaScript -->
+<script src="js/bootstrap.js"></script>
+<!-- Other custom JavaScript -->
+<script src="js/script.js" type="text/javascript"></script>
+
 </body>
 </html>
