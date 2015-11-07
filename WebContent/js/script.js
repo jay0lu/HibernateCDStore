@@ -12,7 +12,7 @@ function WriteCookie(name1,value1,price,urlv,qnt1)
         var expires = "; expires="+date.toGMTString();
         document.cookie = name+"="+value+expires+"; path=/"; 
      
-        alert("CD added");
+        alert("CD added.");
     //alert ("cookie="+document.cookie);    
     //alert ("cdid="+name1+" is added to your cart!");
 }
@@ -41,12 +41,12 @@ function WritetoCookie(name,value1,price,urlv,qnt1,totv)
         var expires = "; expires="+date.toGMTString();
         document.cookie = name+"="+value+expires+"; path=/";
         
-        location.reload();
+     //   location.reload();
          
 //alert ("document.cookie"+document.cookie);
  
 }
- 
+ function refresh(){location.reload();}
  
  
 function eraseCookie (name1,bttn) {
@@ -59,7 +59,7 @@ function eraseCookie (name1,bttn) {
     document.getElementById(bttn1).disabled = true;
     
     //document.write ("docment cookies : " +document.cookie);
-    location.reload();
+   // location.reload();
 }
  
 function repf(tit){
