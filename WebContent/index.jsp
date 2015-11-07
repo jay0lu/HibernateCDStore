@@ -1,7 +1,5 @@
 
 
-<% //test test2  another aaa%>
-
 
 <div class="container-fluid">
     <div class="col-md-3">
