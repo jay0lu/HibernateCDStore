@@ -57,17 +57,24 @@
 							<%
 							String url = request.getRequestURL().toString();
 							System.out.println("url=" + url);
-							%>
-							<li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown" href="category?category=all">Category <span class="caret"></span></a>
-					              <ul class="dropdown-menu">
-					                    <li><a href="category?category=pop">Pop</a></li>
-					                    <li><a href="category?category=classic">Classic</a></li>
-					                    <li><a href="category?category=rock">Rock</a></li>
-					                    <li><a href="category?category=country">Country</a></li>
-					                    <li><a href="category?category=rnb">RnB</a></li>
-					                    <li><a href="category?category=techno">Techno</a></li>
-					               </ul>
-					        </li>    
+							
+							if(url.equals("https://localhost:8443/HibernateWebApp/WEB-INF/view/category.jsp")){
+								out.println("<li class='dropdown'><a  class='dropdown-toggle' data-toggle='dropdown' href='category?category=all'>Category <span class='caret'></span></a>");
+					              out.println("<ul class='dropdown-menu'>");
+					                    out.println("<li><a href='category?category=pop'>Pop</a></li>");
+					                    out.println("<li><a href='category?category=classic'>Classic</a></li>");
+					                    out.println("<li><a href='category?category=rock'>Rock</a></li>");
+					                    out.println("<li><a href='category?category=country'>Country</a></li>");
+					                    out.println("<li><a href='category?category=rnb'>RnB</a></li>");
+					                    out.println("<li><a href='category?category=techno'>Techno</a></li>");
+					               out.println("</ul>");
+					            out.println("</li>");    
+							}else {
+								out.println("<li><a href='category?category=all'>Category</a></li>");
+							}
+								
+							
+							%>   
 							<li><a href="cart">Cart</a></li>
 							<li><a href="about">About</a></li>
 						</ul>
