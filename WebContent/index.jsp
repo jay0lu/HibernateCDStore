@@ -1,8 +1,5 @@
 
 
-<% //test test2  another aaa last changer reallyy last%>
-
-
 <div class="container-fluid">
     <div class="col-md-3">
     </div>
