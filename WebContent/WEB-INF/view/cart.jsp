@@ -3,15 +3,18 @@
 <%@ page import="java.util.*, java.io.*"%>
 <%@ page import="java.math.BigDecimal"%>
 <%@ page import="java.util.List"%>
+
 <%
-	String category = (String) session.getAttribute("category");
-
-	BigDecimal pricefromsession = BigDecimal.ZERO;
-	int stock = 0;
-
-	CDDAO cdDao = new CDDAO();
-	List<CD> cd = cdDao.getAllCD(category);
+/*	if ((!session.getAttribute("category").equals(null)) || (!session.getAttribute("category").equals("")))
+	{
+		String category = (String) session.getAttribute("category");
+		CDDAO cdDao = new CDDAO();
+		List<CD> cd = cdDao.getAllCD(category);
+	} */
+	//BigDecimal pricefromsession = BigDecimal.ZERO;
+	//int stock = 0;
 %>
+
 <%
 	String tit = "", price = "", urlm = "", qnty = "", stotal = "", bid = "myid", bttn = "", bttn2 = "";
 	BigDecimal total = BigDecimal.ZERO;
@@ -113,7 +116,7 @@
 					<td><%=tit%></td>
 					<td><%=price%></td>
 					<td><input class="mytextbox" type="number" name='x' size="3"
-						max="100" min="0" value="<%=qnty%>" id='<%=bid%>' /></td>
+						max="1000" min="0" value="<%=qnty%>" id='<%=bid%>' /></td>
 					<td><input class="myButton2" type="button" value="Update"
 						id='<%=bttn%>'
 						onclick="WritetoCookie('<%=cookie.getName()%>','<%=tit%>','<%=price%>','<%=urlm%>','<%=bid%>','<%=total%>')" />
