@@ -111,15 +111,15 @@
 			</tr>
 			<tr>
 				<td>OrderDetail :</td>
-				<td><input type="text" name="orderDetail" size="40" value="<%= orderDetail%>"/></td>
+				<td><input type="text" name="orderDetail" value="<%= orderDetail%>"/></td>
 			</tr>
 			<tr>
 				<td>DateTime :</td>
-				<td><input type="text" name="dateTime" size="40" value="<%= datetime%>"/></td>
+				<td><input type="text" name="dateTime"  value="<%= datetime%>"/></td>
 			</tr>
 			<tr>
 				<td>Price :</td>
-				<td><input type="number" name="price" size="40" min="0" max="50" value="<%= price%>"/></td>
+				<td><input readonly name="price"  value="<%= price%>"/></td>
 			</tr>
 			<tr>
 				<td>Address :</td>

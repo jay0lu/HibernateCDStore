@@ -32,15 +32,15 @@ public class OrderDAO {
         return session;
 	}
 	
-	public boolean addOrderDetails(String userName, String orderDetail, String datetime, BigDecimal price, String phoneNumber, String address) {
+	public boolean addOrderDetails(String email,  String datetime, BigDecimal price, String phoneNumber, String address) {
         try {
         	
         	Session session = hibernateConfig();
             Transaction transaction = session.beginTransaction();
             
             OrderDetail order = new OrderDetail();
-            order.setUserName(userName);
-            order.setOrderDetail(orderDetail);
+            order.setEmail(email);
+//            order.setOrderDetail(orderDetail);
             order.setDate(datetime);
             order.setPrice(price);
             order.setAddress(address);

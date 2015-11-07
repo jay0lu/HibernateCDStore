@@ -43,7 +43,7 @@ public class ConfirmOrderControllerServlet extends HttpServlet {
         
         try{
         	OrderDAO orderDAO = new OrderDAO();
-        	boolean success = orderDAO.addOrderDetails(userName, orderDetail, dateTime, price, phoneNumber, address);
+        	boolean success = orderDAO.addOrderDetails(userName, dateTime, price, phoneNumber, address);
         	String nextJSP;
         	
         	if(success)

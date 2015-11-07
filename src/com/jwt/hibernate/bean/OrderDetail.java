@@ -12,8 +12,8 @@ public class OrderDetail {
 	
 	private int id;
     
-	private String userName;
-    private String orderDetail;  //cd name and amount
+	private String email;
+//    private String orderDetail;  //cd name and amount
     private String date;
     private BigDecimal price;
     private String phoneNumber;
@@ -28,21 +28,21 @@ public class OrderDetail {
 		this.id = id;
 	}
 	
-    @Column(name="userName", nullable=false)
-	public String getUserName() {
-		return userName;
+    @Column(name="email", nullable=false)
+	public String getEmail() {
+		return email;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
-    @Column(name="orderDetail")
-	public String getOrderDetail() {
-		return orderDetail;
-	}
-	public void setOrderDetail(String orderDetail) {
-		this.orderDetail = orderDetail;
-	}
+//    @Column(name="orderDetail")
+//	public String getOrderDetail() {
+//		return orderDetail;
+//	}
+//	public void setOrderDetail(String orderDetail) {
+//		this.orderDetail = orderDetail;
+//	}
 	
     @Column(name="date")
 	public String getDate() {
