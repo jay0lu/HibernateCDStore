@@ -103,21 +103,21 @@
  <div id="signup"> 
         <h2>Create Your Account Here</h2>
         
-        <form action="register" method="post">
+        <form action="signup" method="post">
         
         <div class="top-row">
           <div class="field-wrap">
             <label>
               First Name<span class="req">*</span>
             </label>
-            <input type="text" required autocomplete="off" name="firstname" />
+            <input type="text" required autocomplete="off" name="firstName" />
           </div>
       
           <div class="field-wrap">
             <label>
               Last Name<span class="req">*</span>
             </label>
-            <input type="text" required autocomplete="off" name="lastname"/>
+            <input type="text" required autocomplete="off" name="lastName"/>
           </div>
         </div>
 

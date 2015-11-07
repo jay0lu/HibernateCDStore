@@ -88,7 +88,8 @@
     line-height:18px;
     margin:0;
     color:#fff;
-    text-align:center
+    text-align:left;
+    padding-left:20px
 }
 .hoverflip figure figcaption {
     top:0;

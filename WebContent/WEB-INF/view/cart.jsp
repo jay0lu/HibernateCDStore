@@ -26,7 +26,7 @@
 				if (session.getAttribute("sessionId") != null) {
 					out.println("<h2 id='firstheading'>" + session.getAttribute("sessionId") + "</h2>");
 				} else {
-					out.println("<h2 id='firstheading'>Dear Vister</h2>" + "<p>To check out, please login.</p>");
+					out.println("<h2 id='firstheading'>Dear Visitor</h2>" + "<p>To check out, please login.</p>");
 				}
 			%>
 			<p id="firstpar">Like the items in your cart?! Why don't you go
@@ -156,8 +156,8 @@
 			stotal = total.toString();
 		%>
 		<p>
-			<td>Total price: <%=stotal%> <input class="myButton2"
-				type="button" value="refresh" onclick="refresh()" /></td>
+			<td>Total price: <%=stotal%> <input type="button"
+				value="refresh" onclick="refresh()" /></td>
 		</p>
 		<p>
 		<form action="Order" method="post">
