@@ -58,7 +58,16 @@
 					<div>
 						<ul class="nav navbar-nav">
 							<li><a href="index.jsp">Home</a></li>
-							<li><a href="category?category=all">Category</a></li>
+							<li class="active dropdown"><a  class="dropdown-toggle" data-toggle="dropdown" href="category?category=all">Category <span class="caret"></span></a>
+					              <ul class="dropdown-menu">
+					                    <li><a href="category?category=pop">Pop</a></li>
+					                    <li><a href="category?category=classic">Classic</a></li>
+					                    <li><a href="category?category=rock">Rock</a></li>
+					                    <li><a href="category?category=country">Country</a></li>
+					                    <li><a href="category?category=rnb">RnB</a></li>
+					                    <li><a href="category?category=techno">Techno</a></li>
+					               </ul>
+					        </li>    
 							<li><a href="cart">Cart</a></li>
 							<li><a href="about">About</a></li>
 						</ul>
