@@ -61,6 +61,7 @@
 							if(url.equals("https://localhost:8443/HibernateWebApp/WEB-INF/view/category.jsp")){
 								out.println("<li class='dropdown'><a  class='dropdown-toggle' data-toggle='dropdown' href='category?category=all'>Category <span class='caret'></span></a>");
 					              out.println("<ul class='dropdown-menu'>");
+		   						        out.println("<li><a href='category?category=all'>All</a></li>");
 					                    out.println("<li><a href='category?category=pop'>Pop</a></li>");
 					                    out.println("<li><a href='category?category=classic'>Classic</a></li>");
 					                    out.println("<li><a href='category?category=rock'>Rock</a></li>");
