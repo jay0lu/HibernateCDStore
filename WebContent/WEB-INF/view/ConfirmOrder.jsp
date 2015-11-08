@@ -8,55 +8,38 @@
 %>
 
 
+<p><br /></p>
 
-<div class="container-fluid">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-6">
-        <div class="hovershine">
-            <figure>
-                <img src="images/popbanner.jpg"/>
-            </figure>
+<form id="myform1" class="myform1" name="form" action="confirmOrder" method="post">
+ <h1>Confirm Order</h1>
+    <div class="content1">
+        <div class="intro1"></div>
+        <div id="section0" >
+
+            <div class="field1">
+                <label for="userName">User Name</label><input type="text" id="userName" name="userName" value="<%= username %>">
+            </div>
+            <div class="field1">
+                <label for="orderDetail">Order Detail</label><input type="text" id="orderDetail" name="orderDetail" value="<%= orderDetail%>">
+            </div>
+            <div class="field1">
+                <label for="price">Price</label><input type="text" id="price" name="price" value="<%= price%>">
+            </div>
+            <div class="field1">
+                <label for="address">Address</label><input type="text" id="address" name="address"  placeholder="address">
+            </div>
+            <div class="field1">
+                <label for="phoneNumber">Phone Number</label><input type="text" id="phoneNumber" name="phoneNumber"  placeholder="phone number">
+            </div><br />
+            <div class="field1">
+              <input class="myButton" type="submit" id="Submit" value="Confirm Order">
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-    </div>
-</div>
+</form>
 
-
-
-<h1>Confirm Order</h1>
-	<form action="confirmOrder" method="post">
-	<table cellpadding="3pt">
-			<tr>
-				<td>UserName :</td>
-				<td><input type="text" name="userName" size="40" value="<%= username %>"/></td>
-			</tr>
-			<tr>
-				<td>OrderDetail :</td>
-				<td><input type="text" name="orderDetail" value="<%= orderDetail%>"/></td>
-			</tr>
-			<tr>
-				<td>DateTime :</td>
-				<td><input type="text" name="dateTime"  value="<%= datetime%>"/></td>
-			</tr>
-			<tr>
-				<td>Price :</td>
-				<td><input readonly name="price"  value="<%= price%>"/></td>
-			</tr>
-			<tr>
-				<td>Address :</td>
-				<td><input type="text" name="address" /></td>
-			</tr>
-			<tr>
-				<td>PhoneNumber :</td>
-				<td><input type="text" name="phoneNumber" /></td>
-			</tr>
-		</table>
-		<p />
-		<input type="submit" value="Confirm Order" />
-	</form>
-
-
+<p><br /></p>
+<p><br /></p>
+<p><br /></p>
 
 
