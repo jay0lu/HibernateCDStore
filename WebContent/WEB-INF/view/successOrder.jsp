@@ -16,12 +16,26 @@
 
 %>
 
+<p><br /></p>
 
-<H1>Order Added Successfully!</H1>
+<h1>Congratulations!.. Your Order is Added Successfully :)</h1>
 
-<br>E-mail: <%= email %>
+<br/>
+
+<h3>your e-mail: <%= email %></h3>
+
+<p><br /></p>
+
+<img src="images/country.jpg" alt="success image" height="50%" width="50%"/>
 
 
+<p><br /></p>
+<p><br /></p>
 
-
-
+	<h2><a href="index.jsp"> Continue Browsing!</a></h2>
+	
+<p><br /></p>
+<p><br /></p>
+<p><br /></p>
+<p><br /></p>
+<p><br /></p>
