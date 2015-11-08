@@ -69,6 +69,10 @@ function noItemInStock(){
 	  alert("No item left in stock!");
 	}
 
+function nothingForCheckOut(){
+	  alert("No fees/items to make an order for!");
+	}
+
 /**********************************************************************************************/
  
 /* For SingUp/Login Form**********************************************************************/
