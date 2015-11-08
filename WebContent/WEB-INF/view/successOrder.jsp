@@ -22,7 +22,7 @@
 
 <br/>
 
-<h3>your e-mail: <%= email %></h3>
+<h3>your e-mail is: &nbsp; <%=session.getAttribute("sessionId")%></h3>
 
 <p><br /></p>
 
