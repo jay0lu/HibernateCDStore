@@ -23,24 +23,25 @@
 
 
 <div class="container-fluid">
-	<div class="col-md-11">
+	<div class="col-md-12">
 		<div class="jumbotron jumbotron-bg1">
 			<%
 				if (session.getAttribute("sessionId") != null) {
 					out.println("<h2 id='firstheading'>" + session.getAttribute("sessionId") + "</h2>");
+					out.println("<p id='firstpar'>Like the items in your cart?! Why don't you go ahead and Check them out?</p>");
 				} else {
-					out.println("<h2 id='firstheading'>Dear Visitor</h2>" + "<p>To check out, please login.</p>");
+					out.println("<h2 id='firstheading'>Dear Visitor</h2>" + "<h3>To check out, please login!</h3>");
 				}
 			%>
-			<p id="firstpar">Like the items in your cart?! Why don't you go
-				ahead and Check them out?</p>
+
 		</div>
 	</div>
 </div>
 
 <div class="container-fluid">
 	<div class="col-md-11">
-		<p>Shopping Cart:</p>
+		<h1>Shopping Cart:</h1>
+		<p><br /></p>
 	</div>
 </div>
 
@@ -134,7 +135,7 @@
 					}
 					if (i == 0) {
 				%>
-				<p>You did not select any CD</p>
+				<h3>You have not selected any CDs!</h3>
 				<%
 					}
 				%>
@@ -153,24 +154,29 @@
 
 
 <div class="container-fluid">
-	<div class="col-md-3">
+	<div class="col-md-5">
 
 		<%
 			stotal = total.toString();
 		%>
 		<p>
-			<td>Total price: <%=stotal%> <input type="button"
-				value="refresh" onclick="refresh()" /></td>
+			<h1>Total price: <%=stotal%> &nbsp;&nbsp;&nbsp;</h1><input type="button"
+				value="Refresh for updated price!" onclick="refresh()" />
 		</p>
+		<p><br /></p>
 		<p>
 		<form action="Order" method="post">
-			<input class="myButton" type="submit" value="Checkout"
+			<h1>Check out</h1><input class="myButton" type="submit" value="        Checkout        "
 				onclick="createcookie('<%=stotal%>' )" />
 		</form>
 		</p>
-
-
+		
 	</div>
 </div>
+
+<p><br /></p>
+<p><br /></p>
+
+
 
 
