@@ -14,14 +14,14 @@
     %>
 
 
-
-
+<h1>User Account</h1>
 
 			<h3>
 				Your user email is:
 				<%=user.getEmail()%></h3>
-			<h3>You can change following items</h3>
+			<h3>You can change following items:</h3>
 			<form action="editUser" method="POST">
+			<p><br /></p>
 				<table cellpadding="3pt">
 					<tr>
 						<td>First Name :</td>
@@ -45,12 +45,23 @@
 					</tr>
 
 				</table>
-				<p />
-				<input type="submit" value="Submit" />
+				<br />
+				<input class="myButton2" type="submit" value="Submit" />
 			</form>
 
 
-
+	<p><br /></p>
+	<p><br /></p>
+	<p><br /></p>
+	<p><br /></p>
+    <p><br /></p>
+    <p><br /></p>
+	<p><br /></p>
+	<p><br /></p>
+	<p><br /></p>
+    <p><br /></p>
+ 	<p><br /></p>
+    <p><br /></p>
 
 
 
