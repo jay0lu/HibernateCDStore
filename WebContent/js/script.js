@@ -12,7 +12,7 @@ function WriteCookie(name1,value1,price,urlv,qnt1)
         var expires = "; expires="+date.toGMTString();
         document.cookie = name+"="+value+expires+"; path=/"; 
      
-        alert("CD added.");
+        alert("Your Item is added to the Cart:)");
     //alert ("cookie="+document.cookie);    
     //alert ("cdid="+name1+" is added to your cart!");
 }
@@ -23,10 +23,8 @@ function createcookie(to,bttn ){
     date.setTime(date.getTime()+(60*60*3000));
     var expires = "; expires="+date.toGMTString();
         document.cookie = name+"="+value+expires+"; path=/";
-        
-       
-        //alert ("cookie="+document.cookie);
-     
+               
+        //alert ("cookie="+document.cookie);   
 }
  
 function WritetoCookie(name,value1,price,urlv,qnt1,totv)
@@ -65,6 +63,11 @@ function eraseCookie (name1,bttn) {
 function repf(tit){
     return tit.split('+').join(' ');
 }
+
+function noItemInStock(){
+	  alert("No item left in stock!");
+	}
+
 /**********************************************************************************************/
  
 /* For SingUp/Login Form**********************************************************************/

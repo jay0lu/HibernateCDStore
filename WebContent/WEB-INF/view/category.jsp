@@ -63,7 +63,11 @@
                             <h2><a href="#"><%= cdName %></a>
                             </h2>
                             <h3>Singer: <%= singer %></h3>
-                            <button class="myButton2 center" onclick="WriteCookie('<%=cdid %>','<%=cdName %>','<%=price %>','<%=img %>','1')">Add to Cart</button>
+                            <% if (stock == 0){ %>
+                            	<button class="myButton2 center" onclick="noItemInStock()">Add to Cart</button>                            
+                            <% } else { %>
+                            	<button class="myButton2 center" onclick="WriteCookie('<%=cdid %>','<%=cdName %>','<%=price %>','<%=img %>','1')">Add to Cart</button>
+                            <% } %>
                         </div>
                         <div class="ratings">
                             <p class="pull-right">15 reviews</p>

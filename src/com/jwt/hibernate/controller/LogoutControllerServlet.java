@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Cookie;
 
 import org.hibernate.Session;
 
@@ -18,6 +19,23 @@ public class LogoutControllerServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
+			
+		    Cookie[] cookies = request.getCookies();
+			 
+		    // Delete all the cookies
+		    if (cookies != null) {
+		 
+		        for (int i = 0; i < cookies.length; i++) {
+		        	
+		            Cookie cookie = cookies[i];
+		          
+		            cookie.setMaxAge(0);
+		            cookie.setPath("/");
+		            cookie.setValue("");
+		            response.addCookie(cookie); 
+		        }
+		    }
+		        
 
 			
 			
