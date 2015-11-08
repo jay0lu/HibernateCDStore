@@ -9,11 +9,12 @@
 %>
 
 
+<p><br /></p>
 
 <form id="myform1" class="myform1" name="form" action="checkCreditCard" method="post">
- <h1>Billing Info</h1>
+ <h1>Billing Info.</h1>
     <div class="content1">
-        <div class="intro1"><p>Add billing details! (credit card)</p></div>
+        <div class="intro1"></div>
         <div id="section0" >
             <div class="field1">
                 <label for="cardNumber">Card Number</label><input type="number" id="cardNumber" name="cardNumber" placeholder="Card Number" required>
@@ -40,7 +41,7 @@
             </div>
             <div class="field1">
                 <label for="price">Price</label><input type="text" id="price" name="price" value="<%= price%>"readonly>
-            </div> <p><br /></p>
+            </div> <br />
             <div class="field1">
               <input class="myButton" type="submit" id="Submit" value="Submit">
             </div>
