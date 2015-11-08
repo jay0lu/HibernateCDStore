@@ -267,3 +267,80 @@ footer{
     width: 100px;
 }
 
+
+/* For Form---------------------------------------------------------------*/
+ .myform1{ 
+    max-width: 50%; 
+    min-width: 50%; 
+    border-width: 3px; 
+    border-color: black; 
+    border-radius: 16px; 
+    border-style: solid; 
+    color: #000000; 
+    font-size: 18px; 
+    background-color: rgba(255, 255, 132, 0.5); 
+    padding: 40px;
+    margin: 0 auto;
+} 
+.content1{ 
+    margin: 12px; 
+} 
+.myform1 label{ 
+    color: #222222; 
+    font-size: 19px; 
+    display: block; 
+} 
+.myform1 input[type=radio], input[type=checkbox]{ 
+    margin: 10px; 
+    width: 13px; 
+} 
+.myform1 div{ 
+    display: block; 
+} 
+.myform1 input, myform1 textarea, myform1 select{ 
+    border-width: 2px; 
+    border-style: solid; 
+    border-color: #666666; 
+    border-radius: 4px; 
+    padding: 2px; 
+    width: 100%; 
+} 
+.myform1, .myform1 h1, .myform1 h2{ 
+    font-family: 'Georgia'; 
+} 
+.myform1 h1{ 
+    font-size: 42px; 
+    color: #000000; 
+    margin: 0px; 
+    margin-bottom: 0px; 
+    border-bottom-style: dotted; 
+    border-bottom-color: #CCCCCC; 
+    border-bottom-width: 0px; 
+    border-radius: 0px; 
+    background-color: rgba(179, 252, 105,0.25);
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px 
+} 
+.intro1{ 
+    margin-bottom: 22px; 
+} 
+.clear{ 
+    clear: both; 
+} 
+.myform1 textarea{ 
+    height: 26px; 
+    width: 100%; 
+} 
+.myform1 input[type=submit]{ 
+    width: 50%; 
+    height: 50px;
+    background-color: #CCCCCC; 
+    color: #222222;
+    margin-left: 25%;
+} 
+.field1{ 
+    margin-bottom: 12px; 
+}
+
+/*-------------------------------------------------------------------------*/
