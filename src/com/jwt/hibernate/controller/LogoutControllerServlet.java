@@ -19,6 +19,8 @@ public class LogoutControllerServlet extends HttpServlet {
 
 		try {
 
+			
+			
 			HttpSession session = request.getSession();
 
 			session.removeAttribute("sessionID");

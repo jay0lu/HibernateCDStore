@@ -4,13 +4,13 @@
 <%@ page import="java.math.BigDecimal"%>
 <%@ page import="java.util.List"%>
 <%
-	String category = (String) session.getAttribute("category");
+/* 	String category = (String) session.getAttribute("category");
 
 	BigDecimal pricefromsession = BigDecimal.ZERO;
 	int stock = 0;
 
 	CDDAO cdDao = new CDDAO();
-	List<CD> cd = cdDao.getAllCD(category);
+	List<CD> cd = cdDao.getAllCD(category); */
 %>
 <%
 	String tit = "", price = "", urlm = "", qnty = "", stotal = "", bid = "myid", bttn = "", bttn2 = "";
