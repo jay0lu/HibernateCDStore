@@ -152,32 +152,50 @@
 <p>
 	<br />
 </p>
-
+<br />
 
 <div class="container-fluid">
-	<div class="col-md-5">
+	<div class="col-md-6">
 
 		<%
 			stotal = total.toString();
 		%>
-		<p>
-			<h1>Total price: <%=stotal%> &nbsp;&nbsp;&nbsp;</h1><input type="button"
-				value="Refresh for updated price!" onclick="refresh()" />
-		</p>
-		<p><br /></p>
-		<p>
-		<form action="Order" method="post">
-			<h1>Check out</h1><input class="myButton" type="submit" value="        Checkout        "
-				onclick="createcookie('<%=stotal%>' )" />
-		</form>
-		</p>
+
+	<table>
+		 <tr>
+		 	<td>
+		 	 	<input type="button" value="Refresh for updated price!" onclick="refresh()" />
+		 	</td>
+		 	 <td>
+		 	</td>
+		 </tr>
+	
+		  <tr>
+		 	<td>
+		 	 	<h1>Total price: <%=stotal%> &nbsp;&nbsp;&nbsp;</h1>
+		 	</td>
+		 	 <td>
+		 	</td>
+		 </tr>
+	
+		 <tr>
+		 	<td>
+		 		<h1>Check out &nbsp;&nbsp; --> </h1>
+		 	</td>
+		 	<td>
+			 	<form action="Order" method="post">
+		 			<input class="myButton" type="submit" value="        Checkout        "	onclick="createcookie('<%=stotal%>' )" />
+		 		</form>
+		 	</td>
+		 </tr>
+	</table>
 		
 	</div>
 </div>
 
 <p><br /></p>
 <p><br /></p>
-
+<p><br /></p>
 
 
 

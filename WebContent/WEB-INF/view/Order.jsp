@@ -29,7 +29,7 @@ BigDecimal total = BigDecimal.ZERO;
     </div>
 </div>
 
-<h1>Add Order</h1>
+
 
 <%
 Cookie[] cdc=request.getCookies();  
@@ -55,9 +55,9 @@ for(Cookie cookie : cdc){
                  }
                  id[i][0]=cookie.getName().substring(2);
                  id[i][1]=qnty; %>
-                 <td >
-               <p> cdid= <%=id[i][0] %> quantity  <%=id[i][1] %></p>
-              </td>
+            
+              <!--  <p> cdid= <%// =id[i][0] %> quantity  <% // =id[i][1] %></p>  -->
+             
                  
                  <%i++;}                   
         }
@@ -71,6 +71,7 @@ for(Cookie cookie : cdc){
         	total= total.add(big);
         	
            %>
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,9 +144,25 @@ for(Cookie cookie : cdc){
   </div>
 </nav>           
         
+=======
+           
+  
+<p><br /></p>
 
+<div class="container-fluid">
+	<div class="col-md-5">
+>>>>>>> master
+
+	<h1>Leave an Order!</h1>  
+	
+	<p><br /></p>	    
+	
 	<form action="addOrder" method="post">
-		<table cellpadding="3pt">
+		<table  class="mytable1">
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>		
 			<tr>
 				<td>Email :</td>
 				<td><input readonly name="userName" value=<%=session.getAttribute("sessionId") %> /></td>
@@ -153,8 +170,8 @@ for(Cookie cookie : cdc){
       <!--  <tr>
 				<td>Detail :</td>
 				<td><input type="text" name="orderDetails" /></td>
-			</tr>
-  			<tr>   -->   
+			</tr>  --> 
+  			<tr>    
 				<td>Price :</td>
 				<td><input readonly name="price" value=<%=tt %> /></td>
 			</tr>
@@ -169,5 +186,27 @@ for(Cookie cookie : cdc){
 			</tr>
 			
 		</table>
-		<input type="submit" value="Add Order" />
+		<p><br /></p>
+		<p><br /></p>
+		<p><br /></p>
+		
+		<input class="myButton" type="submit" value="      Add Order    " />
 	</form>
+
+	<p><br /></p>
+	
+	<a href="cart"> Go back to make some changes!</a>
+	
+	<p><br /></p>
+			
+	</div>
+</div>
+	
+	<p><br /></p>
+	<p><br /></p>
+	<p><br /></p>
+	<p><br /></p>
+    <p><br /></p>
+
+	
+		
