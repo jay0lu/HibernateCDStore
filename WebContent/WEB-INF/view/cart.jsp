@@ -183,9 +183,13 @@
 		 		<h1>Check out &nbsp;&nbsp; --> </h1>
 		 	</td>
 		 	<td>
+		 	<% if (stotal.equals("0") ){ %>
+		 		<input class="myButton" type="submit" value="        Checkout        "	onclick="nothingForCheckOut()" />
+		 	<% } else { %>
 			 	<form action="Order" method="post">
 		 			<input class="myButton" type="submit" value="        Checkout        "	onclick="createcookie('<%=stotal%>' )" />
-		 		</form>
+		 		</form>		 		
+		 	<% } %>
 		 	</td>
 		 </tr>
 	</table>
