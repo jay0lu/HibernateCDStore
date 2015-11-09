@@ -9,61 +9,45 @@
 %>
 
 
+<p><br /></p>
 
-<div class="container-fluid">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-6">
-        <div class="hovershine">
-            <figure>
-                <img src="images/popbanner.jpg"/>
-            </figure>
+<form id="myform1" class="myform1" name="form" action="checkCreditCard" method="post">
+ <h1>Billing Info.</h1>
+    <div class="content1">
+        <div class="intro1"></div>
+        <div id="section0" >
+            <div class="field1">
+                <label for="cardNumber">Card Number</label><input type="number" id="cardNumber" name="cardNumber" placeholder="Card Number" required>
+            </div>
+            <div class="field1">
+                <label for="cardPassword">Card Password</label><input type="password" id="cardPassword" name="cardPassword" required>
+            </div>
+            <div class="field1">
+                <label for="bankName">Bank Name</label><input type="text" id="bankName" name="bankName" placeholder="Bank Name">
+            </div>
+            <div class="field1">
+                <label for="holderName">Holder Name</label><input type="text" id="holderName" name="holderName" size="50" placeholder="Holder Name">
+            </div>
+            <div class="field1">
+             <div class="edit-options">
+              <div class="edit"></div><div class="delete"></div></div>
+                <label for="maxLimit">Max Limit</label><input type="text" id="maxLimit" name="maxLimit" placeholder="Max Limit">
+            </div>
+            <div class="field1">
+                <label for="userName">Email</label><input type="email" id="userName" name="userName" maxlength="40" value="<%=session.getAttribute("sessionId") %>" readonly>
+            </div>
+            <div class="field1">
+                <label for="dateTime">Date Time</label><input type="text" id="dateTime" name="dateTime"  value="<%= datetime%>" readonly>
+            </div>
+            <div class="field1">
+                <label for="price">Price</label><input type="text" id="price" name="price" value="<%= price%>"readonly>
+            </div> <br />
+            <div class="field1">
+              <input class="myButton" type="submit" id="Submit" value="Submit">
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-    </div>
-</div>
-
-
-
-
-<form action="checkCreditCard" method="post">
-		<table cellpadding="3pt">
-		<tr>
-			<td>CardNumber :</td>
-			<td><input class="input" type="number" name="cardNumber"/></td>
-		</tr>
-		<tr>
-			<td>CardPassword :</td>
-			<td><input type="password" name="cardPassword" /></td>
-		</tr>
-		<tr>
-			<td>BankName :</td>
-			<td><input type="text" name="bankName" /></td>
-		</tr>
-		<tr>
-			<td>HolderName :</td>
-			<td><input type="text" name="holderName" size="40"/></td>
-		</tr>
-		<tr>
-			<td>MaxLimit :</td>
-			<td><input type="text" name="maxLimit" /></td>
-		</tr>
-		<tr>
-			<td>Email :</td>
-			<td><input type="text" name="userName" size="40" value="<%=session.getAttribute("sessionId") %>"/></td>
-		</tr>
-		<tr>
-			<td>DateTime :</td>
-			<td><input readonly name="dateTime" value="<%= datetime%>"/></td>
-		</tr>
-		<tr>
-			<td>Price :</td>
-			<td><input readonly name="price" value="<%= price%>"/></td>
-		</tr>
-		</table>
-		<input type="submit" value="Submit" />
-		</form>
+</form>
 
 
 

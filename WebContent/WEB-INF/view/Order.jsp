@@ -195,7 +195,7 @@ for(Cookie cookie : cdc){
 
 	<p><br /></p>
 	
-	<a href="cart"> Go back to make some changes!</a>
+	<h3><a href="cart"> Go back to make some changes!</a></h3>
 	
 	<p><br /></p>
 			
