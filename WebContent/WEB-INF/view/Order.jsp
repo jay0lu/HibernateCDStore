@@ -14,7 +14,6 @@ BigDecimal total = BigDecimal.ZERO;
 %>
 
 
-
 <div class="container-fluid">
     <div class="col-md-3">
     </div>
@@ -71,15 +70,12 @@ for(Cookie cookie : cdc){
         	total= total.add(big);
         	
            %>
-
-
  
  
  <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Confirm Order</title>
-
 	<meta charset="utf-8">
 	
 	<!-- this part is added for Bootstrap functionalities ........................ -->
@@ -117,19 +113,6 @@ for(Cookie cookie : cdc){
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" id="ourbrand" href="#">J2IK CD Store</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-		  <li class="active"><a href="index.jsp">Home</a></li>
-		  <li><a href="/HibernateWebApp/category?category=all">Category</a></li>
-		  <li><a href="cart">Cart</a></li>
-		  <li><a href="about">About</a></li>
-      </ul>
-
 	<div id="wrapper">
 
 		<div class="bodybg1">
@@ -147,7 +130,6 @@ for(Cookie cookie : cdc){
 							<li><a href="cart">Cart</a></li>
 							<li><a href="about">About</a></li>
 						</ul>
-
       <% 
 						System.out.println("session = " + session.getAttribute("sessionId"));
 						
@@ -156,11 +138,6 @@ for(Cookie cookie : cdc){
 								
 							}else {
 							    out.println(" <ul class='nav navbar-nav navbar-right'> ");
-
-							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </li> ");
-
-							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </a></li> ");
-
 							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </a></li> ");
 							    out.println(" <li><a href='logout'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li> ");
 							    out.println(" </ul> ");
@@ -169,15 +146,12 @@ for(Cookie cookie : cdc){
 							%>
     </div>
   </div>
-
-</nav>           
-        
+</nav>          
   
 <p><br /></p>
 
 <div class="container-fluid">
 	<div class="col-md-5">
-
 
 	<h1>Leave an Order!</h1>  
 	
@@ -233,6 +207,3 @@ for(Cookie cookie : cdc){
 	<p><br /></p>
 	<p><br /></p>
     <p><br /></p>
-
-	
-		
