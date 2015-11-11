@@ -72,11 +72,20 @@ for(Cookie cookie : cdc){
         	
            %>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Credit Card Check</title>
+=======
+ 
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Confirm Order</title>
+>>>>>>> master
 	<meta charset="utf-8">
 	
 	<!-- this part is added for Bootstrap functionalities ........................ -->
@@ -114,6 +123,7 @@ for(Cookie cookie : cdc){
 </head>
 <body>
 
+<<<<<<< HEAD
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -126,6 +136,25 @@ for(Cookie cookie : cdc){
 		  <li><a href="cart">Cart</a></li>
 		  <li><a href="about">About</a></li>
       </ul>
+=======
+	<div id="wrapper">
+
+		<div class="bodybg1">
+
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" id="ourbrand" href="#">J2IK CD Store</a>
+					</div>
+
+					<div>
+						<ul class="nav navbar-nav">
+							<li><a href="index.jsp">Home</a></li>
+							<li><a href="category?category=all">Category</a></li>
+							<li><a href="cart">Cart</a></li>
+							<li><a href="about">About</a></li>
+						</ul>
+>>>>>>> master
       <% 
 						System.out.println("session = " + session.getAttribute("sessionId"));
 						
@@ -134,7 +163,11 @@ for(Cookie cookie : cdc){
 								
 							}else {
 							    out.println(" <ul class='nav navbar-nav navbar-right'> ");
+<<<<<<< HEAD
 							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </li> ");
+=======
+							    out.println(" <li><a href='editUser'><span class='glyphicon'></span>" + session.getAttribute("sessionId") + " </a></li> ");
+>>>>>>> master
 							    out.println(" <li><a href='logout'><span class='glyphicon glyphicon-log-in'></span> Log Out</a></li> ");
 							    out.println(" </ul> ");
 							} 
@@ -142,10 +175,14 @@ for(Cookie cookie : cdc){
 							%>
     </div>
   </div>
+<<<<<<< HEAD
 </nav>           
         
 =======
            
+=======
+</nav>          
+>>>>>>> master
   
 <p><br /></p>
 
