@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 
 @WebServlet("/CommonControllerServlet")
@@ -27,6 +29,8 @@ public class CommonControllerServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		int score = Integer.parseInt(request.getParameter("score"));
 		int cdID = Integer.parseInt(request.getParameter("cdID"));
+		String dateTime = request.getParameter("dateTime");
+		
 		
 		try {
 			

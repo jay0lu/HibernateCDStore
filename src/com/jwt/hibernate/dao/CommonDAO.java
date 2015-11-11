@@ -1,5 +1,6 @@
 package com.jwt.hibernate.dao;
 
+import org.apache.naming.java.javaURLContextFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -15,7 +16,7 @@ import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
 
 public class CommonDAO {
 
-	public boolean addCommon(String common, String email, int score, int cdID){
+	public boolean addCommon(String common, String email, int score, int cdID, String dateTime){
 		try {
             // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
@@ -35,6 +36,7 @@ public class CommonDAO {
             commons.setEmail(email);
             commons.setScore(score);
             commons.setCdID(cdID);
+            commons.setDate(dateTime);
             
             session.save(commons);
             transaction.commit();
@@ -50,7 +52,7 @@ public class CommonDAO {
 	
 	}
 	
-	public Common getCommon(int cdID) {
+	public List<Common> getCommon(int cdID) {
 		try {
 			 // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
@@ -64,13 +66,15 @@ public class CommonDAO {
  
             // 4. Starting Transaction
             Transaction transaction = session.beginTransaction();
+            
+            java.util.List<Common>commonList;
             Query query = session.createQuery("FROM Common WHERE cdID ='" + cdID + "'");
             
-            java.util.List<Common> common = query.list();
+            commonList = query.list();
 
             transaction.commit();
 			
-			return common.iterator().next();
+			return commonList;
 					
 		} catch (HibernateException e) {
 			System.out.println(e.getMessage());

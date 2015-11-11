@@ -11,6 +11,7 @@ public class Common {
 	private String email;
 	private int score;
 	private int cdID;
+	private String date;
 	
 	@Id @GeneratedValue
 	@Column(name="id", nullable=false)
@@ -53,6 +54,15 @@ public class Common {
 	public void setCdID(int cdID) {
 		this.cdID = cdID;
 	}
+	
+	@Column(name="date", nullable=false)
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
 	
 	
 
