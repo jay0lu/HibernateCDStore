@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /build/
 /build/
 /build/
@@ -240,12 +239,7 @@
 /build/
 /build/
 /build/
-=======
-*.classpath
-*.project
-/.settings/
-*.class
->>>>>>> origin/master
+
 /build/
 /build/
 /build/

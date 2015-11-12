@@ -15,6 +15,7 @@
   <mapping class="com.jwt.hibernate.bean.CD"/>
   <mapping class="com.jwt.hibernate.bean.User"/> 
   <mapping class="com.jwt.hibernate.bean.OrderDetail"/>  
+  <mapping class="com.jwt.hibernate.bean.Common" />
   
   
  </session-factory>

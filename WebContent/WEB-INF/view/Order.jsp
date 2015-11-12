@@ -207,6 +207,3 @@ for(Cookie cookie : cdc){
 	<p><br /></p>
 	<p><br /></p>
     <p><br /></p>
-
-	
-		
