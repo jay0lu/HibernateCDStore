@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+import com.jwt.hibernate.bean.Common;
+import com.jwt.hibernate.dao.CommonDAO;
 
 @WebServlet("/CommonControllerServlet")
 public class CommonControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
-
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -33,6 +33,11 @@ public class CommonControllerServlet extends HttpServlet {
 		
 		
 		try {
+		
+			CommonDAO commonDAO = new CommonDAO();
+			boolean success = commonDAO.addCommon(common, email, score, cdID, dateTime);
+			
+			
 			
 			
 		} catch (Exception e) {
