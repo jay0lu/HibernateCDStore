@@ -43,6 +43,8 @@
 				stock = cd.get(i).getStock();
 				img = cd.get(i).getImg();
 				cdid = cd.get(i).getCdid();
+			}
+	  	}
 %>
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
@@ -81,8 +83,6 @@
                         </div>
                     </div>
                 </div>
-		   <% }
-		} %> 
 
 
 
