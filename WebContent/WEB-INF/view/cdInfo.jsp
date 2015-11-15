@@ -25,8 +25,7 @@
 	}
 %>
 
-<h1><%=cdName %>>
-</h1>
+<h1><%=cdName %></h1>
 
 <div class="col-sm-4 col-lg-4 col-md-4">
 	<div class="thumbnail thumbnail-bg">

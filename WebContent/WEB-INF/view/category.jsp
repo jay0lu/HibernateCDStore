@@ -43,8 +43,6 @@
 				stock = cd.get(i).getStock();
 				img = cd.get(i).getImg();
 				cdid = cd.get(i).getCdid();
-			}
-	  	}
 %>
 
                 <div class="col-sm-4 col-lg-4 col-md-4">
@@ -62,7 +60,7 @@
                         </ul>
                         <div class="caption">
                             <h2 class="pull-right">$<%= price %></h2>
-                            <h2><a href="#"><%= cdName %></a>
+                            <h2><a href='/HibernateWebApp/cdInfo?cdName=<%=cdName %>'><%= cdName %></a>        <!-- link to cdinfo -->
                             </h2>
                             <h3>Singer: <%= singer %></h3>
                             <% if (stock == 0){ %>
@@ -83,6 +81,8 @@
                         </div>
                     </div>
                 </div>
+		   <% }
+		} %> 
 
 
 
