@@ -46,7 +46,7 @@ public class Common {
 		this.score = score;
 	}
 	
-	@OneToOne(mappedBy="commonID")
+//	@OneToOne(mappedBy="commonID")
 	@Column(name="cdID", nullable=false)
 	public int getCdID() {
 		return cdID;

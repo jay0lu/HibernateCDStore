@@ -112,12 +112,18 @@
     <servlet-name>EditUser</servlet-name>
     <url-pattern>/editUser</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CD</servlet-name>
+    <url-pattern>/cdInfo</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
   <session-config>
     <session-timeout>10</session-timeout>
   </session-config>
+  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>HibernateWebApp</web-resource-name>

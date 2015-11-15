@@ -85,7 +85,7 @@ public class CD {
 		this.img = img;
 	}
 	
-	@OneToOne
+//	@OneToOne
 	@Column(name="commonID")
 	public int getCommonID() {
 		return commonID;
