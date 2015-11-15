@@ -69,6 +69,20 @@
 		</div>
 </div>
 		   <% }%>
+		   
+		   <div id="addCommon">
+		   <form action="addCommon">
+		   Please login to add a common.<br>
+	   
+		   Score: <br>
+		   <input type="range" name="scoreRange" min="0" max="5" step="0.5" value="0" oninput="this.form.scoreNumber.value=this.value" />
+           <input type="number" name="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="this.form.scoreRange.value=this.value" />
+		   <br>Common: <br>
+		   <input type="text" name="common"><br>	
+		   </form>
+		   </div>
+		   
+		   <div id="showCommons">Show commons </div>
 
 
 <!-- 
