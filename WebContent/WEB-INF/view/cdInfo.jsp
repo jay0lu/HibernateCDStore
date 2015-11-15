@@ -74,11 +74,11 @@
 		   <form action="addCommon">
 		   Please login to add a common.<br>
 	   
-		   Score: <br>
-		   <input type="range" name="scoreRange" min="0" max="5" step="0.5" value="0" oninput="this.form.scoreNumber.value=this.value" />
-           <input type="number" name="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="this.form.scoreRange.value=this.value" />
+		   Score: <input readonly name="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="this.form.scoreRange.value=this.value" /><br>
+		   <input type="range" name="scoreRange" min="0" max="5" step="0.5" value="0" oninput="this.form.scoreNumber.value=this.value" />          
 		   <br>Common: <br>
-		   <input type="text" name="common"><br>	
+		   <input type="text" name="common"><br>
+		   <input type="submit" value="Submit">	
 		   </form>
 		   </div>
 		   
