@@ -1,11 +1,15 @@
 package com.jwt.hibernate.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -26,17 +30,33 @@ public class CommonControllerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String common = request.getParameter("common");
-		String email = request.getParameter("email");
+		String email = "1@1";
+		//		String email = request.getParameter("email");
 		int score = Integer.parseInt(request.getParameter("score"));
-		int cdID = Integer.parseInt(request.getParameter("cdID"));
-		String dateTime = request.getParameter("dateTime");
+		int cdID = 1;
+		//int cdID = Integer.parseInt(request.getParameter("cdID"));
+		String dateTime = "12";
+		//String dateTime = request.getParameter("dateTime");
 		
 		
 		try {
 		
 			CommonDAO commonDAO = new CommonDAO();
 			boolean success = commonDAO.addCommon(common, email, score, cdID, dateTime);
-			
+
+			if(success){
+			System.out.println("common added");
+			}
+//            String nextJSP;
+//            if (success){
+//            	nextJSP = "/success.jsp";
+//            }
+//            else {
+//            	nextJSP = "/failedCD.jsp";
+//            }
+//            
+//            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+//            dispatcher.forward(request,response);
 			
 			
 			

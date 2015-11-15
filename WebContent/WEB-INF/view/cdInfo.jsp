@@ -70,7 +70,7 @@
 </div>
 		   <% }%>
 		   
-		   <div id="addCommon">
+		   <div id="addCommon" method="post">
 		   <form action="addCommon">
 		   Please login to add a common.<br>
 	   
