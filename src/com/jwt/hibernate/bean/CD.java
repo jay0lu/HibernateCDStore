@@ -18,6 +18,7 @@ public class CD {
     private BigDecimal price;
     private int stock;
     private String img;
+    //private int commonID;
     
 	@Id @GeneratedValue
     @Column(name="cdid", nullable=false)
@@ -83,6 +84,16 @@ public class CD {
 	public void setImg(String img) {
 		this.img = img;
 	}
+	
+////	@OneToOne
+//	@Column(name="commonID")
+//	public int getCommonID() {
+//		return commonID;
+//	}
+//	public void setCommonID(int commonId) {
+//		this.commonID = commonID;
+//	}
  
+	
        
 }

@@ -11,7 +11,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import java.util.List;
-//import antlr.collections.List;
 
 import com.jwt.hibernate.bean.CD;
  

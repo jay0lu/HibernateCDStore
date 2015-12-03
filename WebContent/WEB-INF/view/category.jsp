@@ -60,7 +60,7 @@
                         </ul>
                         <div class="caption">
                             <h2 class="pull-right">$<%= price %></h2>
-                            <h2><a href="#"><%= cdName %></a>
+                            <h2><a href='/HibernateWebApp/cdInfo?cdName=<%=cdName %>'><%= cdName %></a>        <!-- link to cdinfo -->
                             </h2>
                             <h3>Singer: <%= singer %></h3>
                             <% if (stock == 0){ %>

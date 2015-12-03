@@ -4,6 +4,7 @@
 <%@ page import="java.math.BigDecimal"%>
 <%@ page import="java.util.List"%>
 
+
 <%
 /*	if ((!session.getAttribute("category").equals(null)) || (!session.getAttribute("category").equals("")))
 	{
