@@ -307,3 +307,5 @@
 /build/
 /build/
 
+build/classes/hibernate.cfg.xml
+src/hibernate.cfg.xml
