@@ -142,26 +142,31 @@ function scoreFunction() {
 //	  }
 //};
 
-function insertComment(cdid,userEmail){  
-//alert("inside js");
-document.getElementById("submitComment").onclick = function(){	
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("POST","addComment", true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
-	
-	var comment = "comment=" + document.getElementById("comment").value;
-	var score = "&score=" + document.getElementById("scoreNumber").value;
-	var cdID = "&cdID=" + cdid;
-	var email = "&email=" + userEmail;
-	var data = comment + score + cdID + email; 
-	
-	xhttp.send(data);
-	xhttp.request
-	xhttp.onreadystatechange = function() {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			document.getElementById("showComments").innerHTML = xhttp.responseText;
-		}	
-	}
+function insertComment(cdid, userEmail) {
+	// alert("inside js");
+	document.getElementById("submitComment").onclick = function() {
+		if (document.getElementById("comment").value != "") {
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "addComment", true);
+			xhttp.setRequestHeader("Content-type",
+					"application/x-www-form-urlencoded");
+
+			var comment = "comment=" + document.getElementById("comment").value;
+			var score = "&score=" + document.getElementById("scoreNumber").value;
+			var cdID = "&cdID=" + cdid;
+			var email = "&email=" + userEmail;
+			var data = comment + score + cdID + email;
+
+			xhttp.send(data);
+			xhttp.request
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					document.getElementById("showComments").innerHTML = xhttp.responseText;
+				}
+			}
+		} else {
+			alert("Please add a comment!");
+		}
 	}
 };
 
