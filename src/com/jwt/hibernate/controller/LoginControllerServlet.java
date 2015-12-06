@@ -29,7 +29,7 @@ public class LoginControllerServlet extends HttpServlet {
             UserDAO userDAO = new UserDAO();
             User user = userDAO.getUserDetails(email);
 
-            //decrypted password
+            //decrypt password
             String encryptedData = String.valueOf(user.getPassword());
             String secretKey = "J2IKJ2IK";
             String decryptedData = encrypt.decipher(secretKey, encryptedData);  

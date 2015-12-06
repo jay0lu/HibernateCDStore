@@ -10,14 +10,28 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import java.util.List;
 
-import com.jwt.hibernate.bean.CD;
-import com.jwt.hibernate.bean.Common;
+import com.jwt.hibernate.bean.*;
 import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
 
 public class CommonDAO {
 
 	public boolean addCommon(String common, String email, double score, int cdID, String dateTime){
 		try {
+			
+//			Check if user have bought the cd. check order table.
+			
+//			OrderDAO orderDAO = new OrderDAO();
+//            OrderDetail orderDetail = orderDAO.getOrder(email);
+//			
+//            
+//        	CDDAO cdDao = new CDDAO();
+//        	List<CD> cd = cdDao.getAllCD(category);
+//
+//        	int size = cd.size();
+//            if (size != 0) {
+//				for (int i = 0; i < size; i++) {
+//					cdName = cd.get(i).getCdName();
+			
             // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();
         	

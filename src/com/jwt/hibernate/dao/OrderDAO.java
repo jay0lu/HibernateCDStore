@@ -61,6 +61,7 @@ public class OrderDAO {
  
     }
     
+	//for comfirmorder
     public OrderDetail getOrderDetails(String phoneNumber) {
         try { 
             // 3. Get Session object
@@ -83,4 +84,28 @@ public class OrderDAO {
         }
  
     }
+    
+    //for check user order history
+//    public List<UserOrder> getUserOrder(String email) {
+//        try { 
+//            // 3. Get Session object
+//        	Session session = hibernateConfig();
+//            // 4. Starting Transaction
+//            Transaction transaction = session.beginTransaction();
+//            
+//            Query query = session.createQuery("FROM Order where email ='" + email + "'");
+//            
+//            java.util.List<UserOrder> orderList = query.list();
+//
+//            transaction.commit();
+//            
+//            return orderList;
+// 
+//        } catch (HibernateException e) {
+//            System.out.println(e.getMessage());
+//            System.out.println("error");
+//            return null;
+//        }
+// 
+//    }
 }
