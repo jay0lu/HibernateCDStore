@@ -143,10 +143,12 @@ document.getElementById("submitComment").onclick = function(){
 	var data = comment + score + cdID + email; 
 	
 	xhttp.send(data);
+	xhttp.request
+	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			document.getElementById("showComments").innerHTML = xhttp.responseText;
 		}	
-	
+	}
 	}
 };
 

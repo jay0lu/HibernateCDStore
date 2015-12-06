@@ -63,8 +63,6 @@ public class CommonControllerServlet extends HttpServlet {
 			
 		      response.setContentType("text/html");
 		      PrintWriter out = response.getWriter();
-		      out.println("<option value='1'>one</option>");
-
 			
 			if (size != 0 ){
 				for (int i = 0; i < size; i++)
@@ -76,7 +74,7 @@ public class CommonControllerServlet extends HttpServlet {
 					
 
 				      out.println( 
-				    		  "<p>hello</p>"
+				    		  "<p>" + email + "gives " + score + "star <br>" + "Said: " + comment + "<br>" + "at: " + dateTime + "</P>"
 				    		  );
 				}						
 			}	
