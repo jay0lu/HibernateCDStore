@@ -349,3 +349,10 @@ iframe[id^='twitter-widget-']
  width:350px !important;
 }
 
+/*-------------------------------------------------------------------------*/
+/*Range style*/
+#scoreNumber{
+	width:220px;
+}
+
+

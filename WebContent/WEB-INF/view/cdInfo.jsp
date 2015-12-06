@@ -178,10 +178,10 @@
 		
 		<label>Score:</label> 
 				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
-				<p>Rank:  <span id="showScore"></div>  </span>
+				<p>Rank:  <span id="showScore">  </span>
 				
 		<label>Comment:</label> <br> 
-				<textarea id="comment" rows="3" cols="30"></textarea>
+				<textarea id="comment" rows="3" cols="100"></textarea>
 				<br>
 
 <%-- Begin display submit button [ <button id="submitComment" onclick="insertComment('<%=cdid%>', '<%=email%>')" >Submit</button> ] --%>
