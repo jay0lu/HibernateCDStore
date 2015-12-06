@@ -342,5 +342,10 @@ footer{
 .field1{ 
     margin-bottom: 12px; 
 }
-
 /*-------------------------------------------------------------------------*/
+/*Changing twitter widget width*/
+iframe[id^='twitter-widget-']
+{
+ width:350px !important;
+}
+
