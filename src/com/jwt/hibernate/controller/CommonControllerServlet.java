@@ -61,21 +61,26 @@ public class CommonControllerServlet extends HttpServlet {
 			List<Common> common = commonDAO.getCommon(cdID);
 			int size = common.size();
 			
+		      response.setContentType("text/html");
+		      PrintWriter out = response.getWriter();
+		      out.println("<option value='1'>one</option>");
+
+			
 			if (size != 0 ){
 				for (int i = 0; i < size; i++)
 				{
 					email =  common.get(i).getEmail();
 					score =  common.get(i).getScore();
 					comment =  common.get(i).getCommon();
-					dateTime = common.get(i).getDate();				
+					dateTime = common.get(i).getDate();		
+					
+
+				      out.println( 
+				    		  "<p>hello</p>"
+				    		  );
 				}						
 			}	
 			
-		      PrintWriter out = response.getWriter();
-		      out.println( 
-		    		  
-		    		  );
-						
 			
 		} catch (Exception e) {
 			// TODO: handle exception

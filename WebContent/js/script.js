@@ -145,8 +145,7 @@ document.getElementById("submitComment").onclick = function(){
 	xhttp.send(data);
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			document.getElementById("showComments").innerHTML = xhttp.responseText;
-		}
-		
+		}	
 	
 	}
 };
