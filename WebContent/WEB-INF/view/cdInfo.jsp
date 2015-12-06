@@ -44,74 +44,42 @@
 	String email = (String) session.getAttribute("sessionId");
 	System.out.println("cdinfo email: " + email);
 %>
-
-<h1><%=cdName %></h1>
-
-<div class="col-sm-4 col-lg-4 col-md-4">
-	<div class="thumbnail thumbnail-bg">
-		<ul class="hoverflip">
-			<li>
-				<figure>
-					<img src=<%= img %> alt="" />
-					<figcaption class="caption">
-						<h2>Featured Songs on this Album:</h2>
-						<p><%= details %></p>
-					</figcaption>
-				</figure>
-			</li>
-		</ul>
-		<div class="caption">
-			<h2 class="pull-right">
-				$<%= price %></h2>
-			<h2>
-				<a href="#"><%= cdName %></a>
-			</h2>
-			<h3>
-				Singer:
-				<%= singer %></h3>
-			<% if (stock == 0){ %>
-			<button class="myButton2 center" onclick="noItemInStock()">Add
-				to Cart</button>
-			<% } else { %>
-			<button class="myButton2 center"
-				onclick="WriteCookie('<%=cdid %>','<%=cdName %>','<%=price %>','<%=img %>','1')">Add
-				to Cart</button>
-		</div>
+<!-- 
 		<div class="ratings">
 			<p class="pull-right"> <%=countcomments%> reviews</p>
 			
 			<p>
-				<% if(allscore<0.0000){ %> 
+				<//% if(allscore<0.0000){ %> 
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
-				<% }else if(allscore>=0.0000&&allscore<2.0000){ %>
+				<//% }else if(allscore>=0.0000&&allscore<2.0000){ %>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
-				<% }else if(allscore>=2.0000&&allscore<3.0000){ %> 
+				<//% }else if(allscore>=2.0000&&allscore<3.0000){ %> 
 				<span class="glyphicon glyphicon-star"></span> 
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span> 
-				<%}else if(allscore>=3.0000&&allscore<4.0000) {%>
+				<//%}else if(allscore>=3.0000&&allscore<4.0000) {%>
 				<span class="glyphicon glyphicon-star"></span> 
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star-empty"></span>
 				<span class="glyphicon glyphicon-star-empty"></span> 
-				<%}else if(allscore>=4.0000&&allscore<5.0000) {%>
+				<//%}else if(allscore>=4.0000&&allscore<5.0000) {%>
 				<span class="glyphicon glyphicon-star"></span> 
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star-empty"></span> 
-				<%}else {%>
+				<//%}else {%>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
@@ -119,9 +87,92 @@
 				<span class="glyphicon glyphicon-star"></span>
 				<%} %>
 			</p>
-		</div>
+		</div>   -->
+
+<div class="container-fluid">
+    <div class="col-md-12">
+       <div class="jumbotron jumbotron-bg1">
+          <h1 id="firstheading"><%=cdName %> &nbsp;-<%=singer %></h1>
+        </div>
+    </div>
+>>>>>>> origin/master
 </div>
-		   <% }%>
+
+
+<div class="container-fluid">
+    <div class="col-md-3">
+      <img src=<%= img %> alt=""/>
+    </div>
+    <div class="col-md-5">
+        <p> <%=details %> </p>
+    </div>
+
+    <div class="col-md-4">
+      <div align="right">
+
+        <!--OurStore-->
+        <a class="twitter-timeline" href="https://twitter.com/J2IKStore" data-widget-id="669341655212797952">Tweets by @J2IKStore</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      </div>
+    </div>
+ </div>
+
+
+<div class="container-fluid">
+    <div class="col-md-8">
+        <h1 id="firstheading">What People are saying about this Album &amp; Singer:</h1>
+        <p id="firstpar">This was the best Album ever <br/>
+        I really loved it! <br/>
+        </p>
+    </div>
+
+    <div class="col-md-4">
+      <div align="right">
+		
+		<% switch (category) {
+
+			case "pop": %>
+		      <!--Pop -->
+		      <a class="twitter-timeline" href="https://twitter.com/hashtag/Pop" data-widget-id="669342479389298688">#Pop Tweets</a>
+		      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+			<% break;
+			
+			case "rock": %>
+			  <!--Rockmusic-->
+			  <a class="twitter-timeline" href="https://twitter.com/hashtag/Rockmusic" data-widget-id="673025904990384128">#Rockmusic Tweets</a>
+			  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<%  break;
+			
+			case "country": %>
+				<!--Countrymusic-->
+				<a class="twitter-timeline" href="https://twitter.com/hashtag/Countrymusic" data-widget-id="673033618365800448">#Countrymusic Tweets</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<% break;
+			
+			case "rnb": %>        
+				<!--RnBmusic -->
+				<a class="twitter-timeline" href="https://twitter.com/hashtag/Rnbmusic" data-widget-id="673034055345156096">#Rnbmusic Tweets</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>        
+			<% break;
+			
+			case "techno": %>
+				<!--Techno --> 
+				<a class="twitter-timeline" href="https://twitter.com/hashtag/Techno" data-widget-id="673031614759309312">#Techno Tweets</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<% break;
+			
+			case "classic":
+			break; 
+			
+			default:
+			break;
+		} %>
+
+      </div>
+    </div>
+ </div>
+
 
 
 
