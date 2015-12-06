@@ -9,8 +9,11 @@
 	String details = "";
 	String category="";
 	BigDecimal price = BigDecimal.ZERO;
-	String img= "";
+	String img= "";	
 	int stock = 0;
+	String OverAllScore = "";
+	String countcomments = "";
+	double allscore = -1.0000;
 	
 	if (cdName != null ){
 	    CDDAO cdDAO = new CDDAO();
@@ -22,7 +25,24 @@
 		img = cd.getImg();
 		stock = cd.getStock();
 		price = cd.getPrice();
+		
+		CDDAO cdDao = new CDDAO();
+        allscore = cdDao.displayOverallScore(cdid);
+        
+        
+        int countcommentsint = cdDao.displayTheNumberofComments(cdid);   //cdDAO?
+    	if(countcommentsint>=1)
+    	{
+        countcomments = String.valueOf(countcommentsint);
+    	}
+    	else
+    	{
+    		countcomments = "0";
+    	}
 	}
+	
+	String email = (String) session.getAttribute("sessionId");
+	System.out.println("cdinfo email: " + email);
 %>
 
 <h1><%=cdName %></h1>
@@ -58,41 +78,99 @@
 				to Cart</button>
 		</div>
 		<div class="ratings">
-			<p class="pull-right">15 reviews</p>
+			<p class="pull-right"> <%=countcomments%> reviews</p>
+			
 			<p>
-				<span class="glyphicon glyphicon-star"></span> <span
-					class="glyphicon glyphicon-star"></span> <span
-					class="glyphicon glyphicon-star"></span> <span
-					class="glyphicon glyphicon-star"></span> <span
-					class="glyphicon glyphicon-star"></span>
+				<% if(allscore<0.0000){ %> 
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<% }else if(allscore>=0.0000&&allscore<2.0000){ %>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<% }else if(allscore>=2.0000&&allscore<3.0000){ %> 
+				<span class="glyphicon glyphicon-star"></span> 
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span> 
+				<%}else if(allscore>=3.0000&&allscore<4.0000) {%>
+				<span class="glyphicon glyphicon-star"></span> 
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span> 
+				<%}else if(allscore>=4.0000&&allscore<5.0000) {%>
+				<span class="glyphicon glyphicon-star"></span> 
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span> 
+				<%}else {%>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<%} %>
 			</p>
 		</div>
 </div>
 		   <% }%>
 
 
-<!-- 
-load common	
-	<form action="editCD" method="get">
-		<table cellpadding="3pt">
-			<tr>
-				<td>CD Name :</td>
-				<td><input id="cdName" type="text" name="cdName" size="30" /></td>
-			</tr>
-		</table>
-		<p />
-		<button onclick="fetchCDInfo()">Get Info</button>
-	</form>
+
+	<!-- 	<div id="disqus_thread"></div>
 	<script>
-		function fetchCDInfo() {
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (xhttp.readyState == 4 && xhttp.status == 200) {
-					//document.getElementById("demo").innerHTML = xhttp.responseText;
-					alert(xhttp.responseText);
-				}
-			}
-			xhttp.open("GET", "/editCD?cdName=" + document.getElementById("cdName").innerText, true);
-			xhttp.send();
-		}
-	</script> -->
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//j2ikcdstore.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+	<noscript>
+		Please enable JavaScript to view the <a
+			href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+			powered by Disqus.</a>
+	</noscript>
+ -->
+
+
+<label>Please login to add a comment.</label><br> 
+
+	<div id="addComment">
+		
+		<label>Score:</label> 
+				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
+				<p>Rank:  <div id="showScore"></div>  </p>
+				
+		<label>Comment:</label> <br> 
+<!-- 				<input type="text" id="comment">
+ -->				<textarea id="comment" rows="3" cols="30"></textarea>
+				<br> 
+				<button id="submitComment" onclick="insertComment('<%=cdid %>', '<%=email %>')" >Submit</button>
+	</div>
+
+	<div id="showComments"></div>
+		
+	<br>
+	<br>
+		 

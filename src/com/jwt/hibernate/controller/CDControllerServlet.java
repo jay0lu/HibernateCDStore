@@ -65,12 +65,12 @@ public class CDControllerServlet extends HttpServlet {
 		
         String category = request.getParameter("category");
         
-        System.out.println("category: " + category);
+//        System.out.println("category: " + category);
         
         HttpSession session = request.getSession();
         session.setAttribute("category", category);
         
-        System.out.println("Session: " + session.getAttribute("category"));
+//        System.out.println("Session: " + session.getAttribute("category"));
         
         //request.getRequestDispatcher("/HibernateWebApp/category.jsp").forward(request, response);
         //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/category.jsp");

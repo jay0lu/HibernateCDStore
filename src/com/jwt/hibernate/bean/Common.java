@@ -9,7 +9,7 @@ public class Common {
 	private int id;
 	private String common;
 	private String email;
-	private int score;
+	private double score;
 	private int cdID;
 	private String date;
 	
@@ -39,10 +39,10 @@ public class Common {
 	}
 	
 	@Column(name="score", nullable=false)
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
 	

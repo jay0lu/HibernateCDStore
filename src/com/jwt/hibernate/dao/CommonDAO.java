@@ -16,7 +16,7 @@ import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
 
 public class CommonDAO {
 
-	public boolean addCommon(String common, String email, int score, int cdID, String dateTime){
+	public boolean addCommon(String common, String email, double score, int cdID, String dateTime){
 		try {
             // 1. configuring hibernate
         	Configuration  configuration = new Configuration ().configure();

@@ -150,5 +150,103 @@ public class CDDAO {
         }
  
     }
+ 
+    public double displayOverallScore(int cdid)
+    {
+    	try {
+            // 1. configuring hibernate
+        	Configuration  configuration = new Configuration ().configure();
+        	
+            // 2. create sessionfactory
+            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+            SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
+ 
+            // 3. Get Session object
+            Session session = sessionFactory.openSession();
+ 
+            // 4. Starting Transaction
+            
+            Transaction transactiontrans = session.beginTransaction();
+            
+            Query queryque = session.createQuery("SELECT COUNT(cdID) FROM Common WHERE cdID ='" + cdid + "'");
+           
+            transactiontrans.commit();
+            
+            Long checkcdidlong;
+            java.util.List<Long> checkcdid = queryque.list();
+            checkcdidlong = checkcdid.iterator().next();
+            int checkcdidint = checkcdidlong.intValue();
+           
+            if(checkcdidint!=0)
+            {
+            Transaction transaction = session.beginTransaction();
+            
+            Query query = session.createQuery("SELECT AVG(score) FROM Common WHERE cdID ='" + cdid + "'");
+           
+            transaction.commit();
+   
+            	java.util.List<Double> scorelist = query.list();
+            	return scorelist.iterator().next();
+            }
+            else
+            	return -1.0000;
+            
+ 
+        } catch (HibernateException e) {
+            System.out.println(e.getMessage());
+            System.out.println("error");
+            return -1.0000;
+        }
+    }
+    
+    public int displayTheNumberofComments(int cdid)
+    {
+    	try {
+            // 1. configuring hibernate
+        	Configuration  configuration = new Configuration ().configure();
+        	
+            // 2. create sessionfactory
+            StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+            SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
+ 
+            // 3. Get Session object
+            Session session = sessionFactory.openSession();
+ 
+            // 4. Starting Transaction
+            
+            Transaction transactiontrans = session.beginTransaction();
+            
+            Query queryque = session.createQuery("SELECT COUNT(cdID) FROM Common WHERE cdID ='" + cdid + "'");
+           
+            transactiontrans.commit();
+            
+            Long checkcdidlong;
+            java.util.List<Long> checkcdid = queryque.list();
+            checkcdidlong = checkcdid.iterator().next();
+            int checkcdidint = checkcdidlong.intValue();
+            
+            if(checkcdidint!=0)
+            {
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createQuery("SELECT COUNT(common) FROM Common WHERE cdID ='" + cdid + "'");
+
+            transaction.commit();
+        
+            Long countcommentslong;
+            java.util.List<Long> countcomments = query.list();
+            countcommentslong = countcomments.iterator().next();
+            int countcommentsint = countcommentslong.intValue();
+            return countcommentsint;
+            }
+            else
+            	return -1;
+            
+ 
+        } catch (HibernateException e) {
+            System.out.println(e.getMessage());
+            System.out.println("error");
+            return -1;
+        }
+    }
     
 }
