@@ -22,8 +22,36 @@ public class CommonControllerServlet extends HttpServlet {
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		int cdID = Integer.valueOf(request.getParameter("cdID"));
+
+		try {			
+			CommonDAO commonDAO = new CommonDAO();
+			
+			List<Common> common = commonDAO.getCommon(cdID);
+			int size = common.size();
+			
+		      response.setContentType("text/html");
+		      PrintWriter out = response.getWriter();
+			
+			if (size != 0 ){
+				for (int i = 0; i < size; i++)
+				{
+					String email =  common.get(i).getEmail();
+					Double score =  common.get(i).getScore();
+					String comment =  common.get(i).getCommon();
+					String dateTime = common.get(i).getDate();		
+					
+
+				      out.println( 
+				    		  "____________________________<br>" +
+				    		  "<p>" + email + "gives " + score + " star <br>" + "And said: " + comment + "<br>" + "at: " + dateTime + "</P>"
+				    		  );
+				}						
+			}	
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 
@@ -50,7 +78,7 @@ public class CommonControllerServlet extends HttpServlet {
 		Date currenttime = new Date();
 		//System.out.print(simpledateformat.format(currenttime));
 		String dateTime = simpledateformat.format(currenttime);
-		System.out.println("DateTime is: " + dateTime);
+//		System.out.println("DateTime is: " + dateTime);
 		
 		
 		try {
@@ -74,7 +102,8 @@ public class CommonControllerServlet extends HttpServlet {
 					
 
 				      out.println( 
-				    		  "<p>" + email + "gives " + score + "star <br>" + "Said: " + comment + "<br>" + "at: " + dateTime + "</P>"
+				    		  "____________________________<br>" +
+				    		  "<p>" + email + "gives " + score + " star <br>" + "And said: " + comment + "<br>" + "at: " + dateTime + "</P>"
 				    		  );
 				}						
 			}	

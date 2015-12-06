@@ -127,7 +127,20 @@ $('.tab a').on('click', function (e) {
 function scoreFunction() {
     var x = document.getElementById("scoreNumber").value;
     document.getElementById("showScore").innerHTML = x + " Star";
-}
+};
+
+//function loadComment(cdid){
+//	alert("page loaded");
+//	
+//	var xhttp = new XMLHttpRequest();
+//	xhttp.open("GET", "getComment?cdID=" + cdid, true);
+//	  xhttp.send();
+//	  xhttp.onreadystatechange = function() {
+//	    if (xhttp.readyState == 4 && xhttp.status == 200) {
+//	      document.getElementById("showComments").innerHTML = xhttp.responseText;
+//	    }
+//	  }
+//};
 
 function insertComment(cdid,userEmail){  
 //alert("inside js");

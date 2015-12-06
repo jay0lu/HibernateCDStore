@@ -174,55 +174,44 @@
 
 
 
-
-
-
-
-<label>Please login to add a comment.</label><br> 
-
-	<div id="addComment">
+	<div id="addComment" >
 		
 		<label>Score:</label> 
 				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
 				<p>Rank:  <div id="showScore"></div>  </p>
 				
 		<label>Comment:</label> <br> 
-<!-- 				<input type="text" id="comment">
- -->				<textarea id="comment" rows="3" cols="30"></textarea>
-				<br> 
-				<button id="submitComment" onclick="insertComment('<%=cdid %>', '<%=email %>')" >Submit</button>
-	</div>
+				<textarea id="comment" rows="3" cols="30"></textarea>
+				<br>
 
-	<p>Commen</p>
-	<div id="showComments"></div>
-	
-<!-- <script>	
-function scoreFunction() {
-    var x = document.getElementById("scoreNumber").value;
-    document.getElementById("showScore").innerHTML = x + " Star";
-}
+<%-- Begin display submit button [ <button id="submitComment" onclick="insertComment('<%=cdid%>', '<%=email%>')" >Submit</button> ] --%>
+	<%  
+		if (session.getAttribute("sessionId") == null) {
+			out.println("<label>Please login to add a comment.</label><br>");
+			out.print("<button ");
 
-function insertComment(cdid,userEmail){  
-//alert("inside js");
-document.getElementById("submitComment").onclick = function(){	
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("POST","addComment", true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+		} else {
+			out.print(" <button id='submitComment'");
+		}
+	%>
+	onclick="insertComment('<%=cdid%>', '<%=email%>')"
+
+	<%
+		if (session.getAttribute("sessionId") == null) {
+			out.print(">Cannot submit</button> ");
+
+		} else {
+			out.print(">Submit</button> ");
+		}
+	%>
+<!-- End display.  -->
+
+</div>
+	 
+<!--   </p><img onload="loadComment()" src="https://upload.wikimedia.org/wikipedia/commons/archive/c/ce/20100705125035%21Transparent.gif"></p> 
+ -->	<div id="showComments" ></div>
 	
-	var comment = "comment=" + document.getElementById("comment").value;
-	var score = "&score=" + document.getElementById("scoreNumber").value;
-	var cdID = "&cdID=" + cdid;
-	var email = "&email=" + userEmail;
-	var data = comment + score + cdID + email; 
-	
-	xhttp.send(data);
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			document.getElementById("showComments").innerHTML = xhttp.responseText;
-		}	
-	
-	}
-};	
-</script> -->
+
 	
 	
 <!-- Disqus -->	
