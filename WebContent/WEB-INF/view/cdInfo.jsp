@@ -85,7 +85,7 @@
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
 				<span class="glyphicon glyphicon-star"></span>
-				<%} %>
+				<//%} %>
 			</p>
 		</div>   -->
 
@@ -95,15 +95,14 @@
           <h1 id="firstheading"><%=cdName %> &nbsp;-<%=singer %></h1>
         </div>
     </div>
->>>>>>> origin/master
 </div>
 
 
 <div class="container-fluid">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <img src=<%= img %> alt=""/>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
         <p> <%=details %> </p>
     </div>
 
@@ -176,7 +175,28 @@
 
 
 
-	<!-- 	<div id="disqus_thread"></div>
+
+
+
+<label>Please login to add a comment.</label><br> 
+
+	<div id="addComment">
+		
+		<label>Score:</label> 
+				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
+				<p>Rank:  <div id="showScore"></div>  </p>
+				
+		<label>Comment:</label> <br> 
+<!-- 				<input type="text" id="comment">
+ -->				<textarea id="comment" rows="3" cols="30"></textarea>
+				<br> 
+				<button id="submitComment" onclick="insertComment('<%=cdid %>', '<%=email %>')" >Submit</button>
+	</div>
+
+	<div id="showComments"></div>
+	
+	
+<div id="disqus_thread"></div>
 	<script>
 /**
 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -202,25 +222,7 @@ s.setAttribute('data-timestamp', +new Date());
 			href="https://disqus.com/?ref_noscript" rel="nofollow">comments
 			powered by Disqus.</a>
 	</noscript>
- -->
-
-
-<label>Please login to add a comment.</label><br> 
-
-	<div id="addComment">
-		
-		<label>Score:</label> 
-				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
-				<p>Rank:  <div id="showScore"></div>  </p>
-				
-		<label>Comment:</label> <br> 
-<!-- 				<input type="text" id="comment">
- -->				<textarea id="comment" rows="3" cols="30"></textarea>
-				<br> 
-				<button id="submitComment" onclick="insertComment('<%=cdid %>', '<%=email %>')" >Submit</button>
-	</div>
-
-	<div id="showComments"></div>
+ 
 		
 	<br>
 	<br>
