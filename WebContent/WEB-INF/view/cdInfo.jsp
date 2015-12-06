@@ -178,7 +178,7 @@
 		
 		<label>Score:</label> 
 				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
-				<p>Rank:  <div id="showScore"></div>  </p>
+				<p>Rank:  <span id="showScore"></div>  </span>
 				
 		<label>Comment:</label> <br> 
 				<textarea id="comment" rows="3" cols="30"></textarea>
