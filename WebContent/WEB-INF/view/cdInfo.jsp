@@ -44,50 +44,8 @@
 	String email = (String) session.getAttribute("sessionId");
 	System.out.println("cdinfo email: " + email);
 %>
-<!-- 
-		<div class="ratings">
-			<p class="pull-right"> <%=countcomments%> reviews</p>
-			
-			<p>
-				<//% if(allscore<0.0000){ %> 
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<//% }else if(allscore>=0.0000&&allscore<2.0000){ %>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<//% }else if(allscore>=2.0000&&allscore<3.0000){ %> 
-				<span class="glyphicon glyphicon-star"></span> 
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span> 
-				<//%}else if(allscore>=3.0000&&allscore<4.0000) {%>
-				<span class="glyphicon glyphicon-star"></span> 
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star-empty"></span>
-				<span class="glyphicon glyphicon-star-empty"></span> 
-				<//%}else if(allscore>=4.0000&&allscore<5.0000) {%>
-				<span class="glyphicon glyphicon-star"></span> 
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star-empty"></span> 
-				<//%}else {%>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<span class="glyphicon glyphicon-star"></span>
-				<//%} %>
-			</p>
-		</div>   -->
+
+
 
 <div class="container-fluid">
     <div class="col-md-12">
@@ -103,7 +61,54 @@
       <img src=<%= img %> alt=""/>
     </div>
     <div class="col-md-4">
+      <div class="row">
         <p> <%=details %> </p>
+      </div>
+      <div class="row">
+        		<div class="ratings">
+			<p class="pull-right"> <%=countcomments%> reviews</p>
+			
+			<p>
+				<% if(allscore<0.0000){ %> 
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<% }else if(allscore>=0.0000&&allscore<2.0000){ %>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<% }else if(allscore>=2.0000&&allscore<3.0000){ %> 
+				<span class="glyphicon glyphicon-star"></span> 
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span> 
+				<%}else if(allscore>=3.0000&&allscore<4.0000) {%>
+				<span class="glyphicon glyphicon-star"></span> 
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span>
+				<span class="glyphicon glyphicon-star-empty"></span> 
+				<%}else if(allscore>=4.0000&&allscore<5.0000) {%>
+				<span class="glyphicon glyphicon-star"></span> 
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star-empty"></span> 
+				<%}else {%>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<span class="glyphicon glyphicon-star"></span>
+				<%} %>
+			</p>
+		</div>
+      </div>
     </div>
 
     <div class="col-md-4">
@@ -124,11 +129,11 @@
     <div class="col-md-8">
         <div class="row">
           What People are saying about this Album &amp; Singer (Stream API):</br>
-           <textarea id="mytextarea1" rows="1" cols="80" wrap="off" placeholder="streaming..."> </textarea>
+           <textarea id="mytextarea1" rows="1" cols="65" wrap="off" placeholder="streaming..."> </textarea>
         </div>
         <div class="row">
           Tweet Data (Search API):</br>
-          <textarea id="mytextarea2" rows="5" cols="80" wrap="off" placeholder="Search Result"><%=twitterSearchResult %></textarea>
+          <textarea id="mytextarea2" rows="5" cols="65" wrap="off" placeholder="Search Result"><%=twitterSearchResult %></textarea>
         </div>
     </div>
 
