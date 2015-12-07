@@ -379,4 +379,12 @@ iframe[id^='twitter-widget-']
 	overflow: auto;
 }
 
+#comment{
+	
+	border: 0.1em solid #333333;
+	border-radius: 0.5em;
+	background-color: #f2f2f2;
+	
+	
+}
 

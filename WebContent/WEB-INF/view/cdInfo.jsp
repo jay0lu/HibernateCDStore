@@ -187,10 +187,8 @@
 
 	<div id="addComment" >
 		
-		<label>Score:</label> 
+		<label>Score:</label> <span id="showScore">  </span>
 				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
-				<p>Rank:  <span id="showScore">  </span>
-				<br>
 		<label>Comment:</label> <br> 
 				<textarea id="comment" rows="3" cols="100"></textarea>
 				<br>
@@ -218,6 +216,7 @@
 <!-- End display.  -->
 
 </div>
+<br>
 	 
 <!--   </p><img onload="loadComment()" src="https://upload.wikimedia.org/wikipedia/commons/archive/c/ce/20100705125035%21Transparent.gif"></p> 
  -->	<div id="showComments" ></div>
