@@ -1,6 +1,7 @@
 package com.jwt.hibernate.controller;
  
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 
 import javax.servlet.RequestDispatcher;
@@ -69,14 +70,7 @@ public class CDControllerServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         session.setAttribute("category", category);
-        
-//        System.out.println("Session: " + session.getAttribute("category"));
-        
-        //request.getRequestDispatcher("/HibernateWebApp/category.jsp").forward(request, response);
-        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/category.jsp");
-        //dispatcher.forward(request,response);  
-        
-      //	request.getRequestDispatcher(url).forward(request, response);
+       
     	
           
          RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url); //"/category.jsp"

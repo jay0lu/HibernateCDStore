@@ -124,23 +124,23 @@ $('.tab a').on('click', function (e) {
 
 /* For cdInfo display score & ajax**********************************************************************/
 
+//function loadComment(cdid){
+//alert("page loaded");
+//
+//var xhttp = new XMLHttpRequest();
+//xhttp.open("GET", "getComment?cdID=" + cdid, true);
+//  xhttp.send();
+//  xhttp.onreadystatechange = function() {
+//    if (xhttp.readyState == 4 && xhttp.status == 200) {
+//      document.getElementById("showComments").innerHTML = xhttp.responseText;
+//    }
+//  }
+//};
+
 function scoreFunction() {
     var x = document.getElementById("scoreNumber").value;
     document.getElementById("showScore").innerHTML = x + " Star";
 };
-
-//function loadComment(cdid){
-//	alert("page loaded");
-//	
-//	var xhttp = new XMLHttpRequest();
-//	xhttp.open("GET", "getComment?cdID=" + cdid, true);
-//	  xhttp.send();
-//	  xhttp.onreadystatechange = function() {
-//	    if (xhttp.readyState == 4 && xhttp.status == 200) {
-//	      document.getElementById("showComments").innerHTML = xhttp.responseText;
-//	    }
-//	  }
-//};
 
 function insertComment(cdid, userEmail) {
 	// alert("inside js");
@@ -158,7 +158,7 @@ function insertComment(cdid, userEmail) {
 			var data = comment + score + cdID + email;
 
 			xhttp.send(data);
-			xhttp.request
+			xhttp.request;
 			xhttp.onreadystatechange = function() {
 				if (xhttp.readyState == 4 && xhttp.status == 200) {
 					document.getElementById("showComments").innerHTML = xhttp.responseText;
@@ -169,4 +169,5 @@ function insertComment(cdid, userEmail) {
 		}
 	}
 };
+
 

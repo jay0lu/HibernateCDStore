@@ -21,11 +21,11 @@ li {
 }
 
 p {
-	font-family: "Brush Script Std";
-}
+/* 	font-family: "Brush Script Std";
+ */}
 
 body {	
-	font-family: "Lobster", Broadway;
+	/* font-family: "Lobster", Broadway; */
 	font-size: 20px;
 	/*font-family: 'Titillium Web', sans-serif;*/
 	/*font: 20px "Lobster", cursive;*/

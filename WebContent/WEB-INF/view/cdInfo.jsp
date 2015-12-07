@@ -179,7 +179,7 @@
 		<label>Score:</label> 
 				<input type="range" id="scoreNumber" min="0" max="5" step="0.5" value="0" oninput="scoreFunction()" /> <br>
 				<p>Rank:  <span id="showScore">  </span>
-				
+				<br>
 		<label>Comment:</label> <br> 
 				<textarea id="comment" rows="3" cols="100"></textarea>
 				<br>
@@ -215,7 +215,7 @@
 	
 	
 <!-- Disqus -->	
-<div id="disqus_thread"></div>
+<div id="disqus_thread" style="background-color:#333333"></div>
 	<script>
 /**
 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -241,8 +241,7 @@ s.setAttribute('data-timestamp', +new Date());
 			href="https://disqus.com/?ref_noscript" rel="nofollow">comments
 			powered by Disqus.</a>
 	</noscript>
- 
-		
+ 		
 	<br>
-	<br>
-		 
+
+

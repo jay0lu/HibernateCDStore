@@ -24,7 +24,16 @@ public class CommonControllerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int cdID = Integer.valueOf(request.getParameter("cdID"));
+//		int a = Integer.valueOf(request.getParameter("1"));
+//		System.out.println("a=" + a);
+//		if ( a == 1) {
+//			response.setContentType("text/html");
+//		      PrintWriter out = response.getWriter();
+//		      out.println("FOR TWITTER");
+//
+//		}else{
 
+		
 		try {			
 			CommonDAO commonDAO = new CommonDAO();
 			
@@ -48,10 +57,12 @@ public class CommonControllerServlet extends HttpServlet {
 				    		  "<p>" + email + "gives " + score + " star <br>" + "And said: " + comment + "<br>" + "at: " + dateTime + "</P>"
 				    		  );
 				}						
-			}	
+			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+		
 	}
 
 
