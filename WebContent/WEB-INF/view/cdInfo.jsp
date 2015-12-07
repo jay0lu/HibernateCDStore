@@ -118,12 +118,18 @@
  </div>
 
 
+<%	String twitterSearchResult = (String) session.getAttribute("fetchedResultSet"); %>
+
 <div class="container-fluid">
     <div class="col-md-8">
-        <h1 id="firstheading">What People are saying about this Album &amp; Singer:</h1>
-        <p id="firstpar">This was the best Album ever <br/>
-        I really loved it! <br/>
-        </p>
+        <div class="row">
+          What People are saying about this Album &amp; Singer (Stream API):</br>
+           <textarea id="mytextarea1" rows="1" cols="80" wrap="off" placeholder="streaming..."> </textarea>
+        </div>
+        <div class="row">
+          Tweet Data (Search API):</br>
+          <textarea id="mytextarea2" rows="5" cols="80" wrap="off" placeholder="Search Result"><%=twitterSearchResult %></textarea>
+        </div>
     </div>
 
     <div class="col-md-4">
