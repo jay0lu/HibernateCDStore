@@ -1,18 +1,16 @@
-package com.jwt.hibernate.controller;
- 
+package com.jwt.twittersearch;
+
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jwt.hibernate.bean.CD;
 import com.jwt.hibernate.dao.CDDAO;
-import com.jwt.twittersearch.SearchForTweets;
 
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -20,74 +18,16 @@ import twitter4j.RateLimitStatus;
 import twitter4j.Status;
 import twitter4j.Twitter;
 
-import com.jwt.hibernate.bean.*;
- 
-public class CDControllerServlet extends HttpServlet {
-     
-    private static final long serialVersionUID = 1L;
-    
- 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- 
-        String cdName = request.getParameter("cdName");
-        String singer = request.getParameter("singer");
-        String details = request.getParameter("details");
-        String category = request.getParameter("category");
-        BigDecimal price = new BigDecimal(request.getParameter("price"));
-        int stock = Integer.parseInt(request.getParameter("stock"));
-        String img = request.getParameter("img");
-        
- 
-        
-        try {
-            CDDAO cdDAO = new CDDAO();
-            boolean success = cdDAO.addCDDetails(cdName, details, price, stock, category,singer, img);
-            
-            
-            String nextJSP;
-            if (success){
-            	nextJSP = "/success.jsp";
-            }
-            else {
-            	nextJSP = "/failedCD.jsp";
-            }
-            
-            HttpSession session = request.getSession();
-            session.setAttribute("cdName", cdName);
 
-            
-            //response.sendRedirect("/HibernateWebApp/success.jsp");
-            
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-            dispatcher.forward(request,response);
-            
-            
-        } catch (Exception e) {
- 
-            e.printStackTrace();
-        }
- 
-    }
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class SearchForTweetController extends HttpServlet{
+
+	private static final long serialVersionUID = 7096128532588391077L;
 	
-	    String userPath = request.getServletPath();
-	    String url = "/WEB-INF/view" + userPath + ".jsp"; 	    
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-        String category = request.getParameter("category");
-        
-        System.out.println("category: " + category);
-        
-        HttpSession session = request.getSession();
-        session.setAttribute("category", category);
-        
-        System.out.println("Session: " + session.getAttribute("category"));
-        
-        
-        
-        /*  For Twitter  --------------------------------------------------------------------------------*/
-        
         String cdName = request.getParameter("cdName");
+		
         String singer = "";
         
     	if (cdName != null ){
@@ -97,10 +37,8 @@ public class CDControllerServlet extends HttpServlet {
     		singer = cd.getSinger();
     	}
     	
-		
 		SearchForTweets.setSEARCH_TERM( singer + " OR " + cdName);
-		SearchForTweets.setTWEETS_PER_QUERY(40);  // --> Max is 100
-        
+
 		// total number of tweets returned -> TWEETS_PER_QUERY is an upper limit
 		int totalTweets = 0;
 		 
@@ -170,7 +108,7 @@ public class CDControllerServlet extends HttpServlet {
 				//System.out.printf("@%-15s :%s  -Posted at: %s\n", s.getUser().getScreenName(), cleanText(s.getText()), s.getCreatedAt().toString());
 				
 				// Making the result set
-				fetchedResult = String.format("@%-15s :%s  -Posted at: %s\n", s.getUser().getScreenName(), SearchForTweets.cleanText(s.getText()), s.getCreatedAt().toString());
+				fetchedResult = String.format("@%-15s :%s  -Posted at: %s <br/>\n", s.getUser().getScreenName(), SearchForTweets.cleanText(s.getText()), s.getCreatedAt().toString());
 				fetchedResultSet += fetchedResult;
 			} 
 			
@@ -190,25 +128,10 @@ public class CDControllerServlet extends HttpServlet {
 		//System.out.print(fetchedResultSet);
 		//System.out.printf("\n\nA total of %d tweets retrieved\n", totalTweets);
 		
-         
-		System.out.println("fetchedResultSet: " + fetchedResultSet);
+        //HttpSession session = request.getSession();
+        //session.setAttribute("fetchedResultSet", fetchedResultSet);
+        
+		request.setAttribute("fetchedResultSet", fetchedResultSet);
 		
-		session.setAttribute("fetchedResultSet", fetchedResultSet);
-		
-		System.out.println("fetchedResultSet: " + session.getAttribute("fetchedResultSet"));
-		
-    /*----------------------------------------------------------------------------------------------*/
-        
-        
-        //request.getRequestDispatcher("/HibernateWebApp/category.jsp").forward(request, response);
-        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/category.jsp");
-        //dispatcher.forward(request,response);  
-        
-      // request.getRequestDispatcher(url).forward(request, response);
-
-         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url); //"/category.jsp"
-         dispatcher.forward(request,response);  
-        
 	}
-
 }
