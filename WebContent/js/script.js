@@ -138,7 +138,6 @@ $('.tab a').on('click', function (e) {
 //};
 
 
-
 function scoreFunction() {
     var x = document.getElementById("scoreNumber").value;
     document.getElementById("showScore").innerHTML = x + " Star";

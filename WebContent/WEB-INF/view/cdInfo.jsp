@@ -251,19 +251,22 @@ s.setAttribute('data-timestamp', +new Date());
  		
 	<br>
 	
-<script>
-
-function loadImage() {
-	alert("img loaded")
-		var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "getComment?cdID=" + cdid, true);
-			xhttp.send();
-			xhttp.request;
-			xhttp.onreadystatechange = function() {
-				if (xhttp.readyState == 4 && xhttp.status == 200) {
-					document.getElementById("showComments").innerHTML = xhttp.responseText;
+	<script type="text/javascript">
+	function loadImage() {
+//		alert("img loaded")
+			var xhttp1 = new XMLHttpRequest();
+				xhttp1.open("GET", "getComment?cdID=" + cdid, true);
+				xhttp1.send();
+				xhttp1.request;
+				xhttp1.onreadystatechange = function() {
+					if (xhttp1.readyState == 4 && xhttp1.status == 200) {
+						document.getElementById("showComments").innerHTML = xhttp1.responseText;
+					}else{
+						alert("ajax response error");
+						}
 				}
-			}
-		};
+				alert("loadImage js finished");
+			};
 </script>
+
 
