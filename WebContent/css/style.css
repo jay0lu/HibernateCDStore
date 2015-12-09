@@ -362,7 +362,7 @@ iframe[id^='twitter-widget-']
 	border: 3px double #765942;
 	border-radius: 0.5em;
 	padding: 2px;
-    resize:none;
+    /* resize:none; */
     outline: none; /*for removing the glowing blue border when focused */
     overflow: auto;
 }
@@ -374,7 +374,7 @@ iframe[id^='twitter-widget-']
     border-radius: 0.5em;
     background-color: #ffffe6;
     padding: 1px;
-	resize:none;
+/* 	resize:none; */
 	outline: none;  /*for removing the glowing blue border when focused */
 	overflow: auto;
 }

@@ -137,6 +137,8 @@ $('.tab a').on('click', function (e) {
 //  }
 //};
 
+
+
 function scoreFunction() {
     var x = document.getElementById("scoreNumber").value;
     document.getElementById("showScore").innerHTML = x + " Star";
@@ -150,7 +152,7 @@ function insertComment(cdid, userEmail) {
 			xhttp.open("POST", "addComment", true);
 			xhttp.setRequestHeader("Content-type",
 					"application/x-www-form-urlencoded");
-
+			
 			var comment = "comment=" + document.getElementById("comment").value;
 			var score = "&score=" + document.getElementById("scoreNumber").value;
 			var cdID = "&cdID=" + cdid;

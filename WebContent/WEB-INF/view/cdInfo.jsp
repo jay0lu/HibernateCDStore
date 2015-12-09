@@ -58,7 +58,7 @@
 
 <div class="container-fluid">
     <div class="col-md-4">
-      <img src=<%= img %> alt=""/>
+      <img src=<%= img %> alt="" onload="loadImage()"/>
     </div>
     <div class="col-md-4">
       <div class="row">
@@ -127,10 +127,7 @@
 
 <div class="container-fluid">
     <div class="col-md-8">
-        <div class="row">
-          What People are saying about this Album &amp; Singer (Stream API):</br>
-           <textarea id="mytextarea1" rows="1" cols="65" wrap="off" placeholder="streaming..."> </textarea>
-        </div>
+        
         <div class="row">
           Tweet Data (Search API):</br>
           <textarea id="mytextarea2" rows="5" cols="65" wrap="off" placeholder="Search Result"><%=twitterSearchResult %></textarea>
@@ -253,5 +250,20 @@ s.setAttribute('data-timestamp', +new Date());
 	</noscript>
  		
 	<br>
+	
+<script>
 
+function loadImage() {
+	alert("img loaded")
+		var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "getComment?cdID=" + cdid, true);
+			xhttp.send();
+			xhttp.request;
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					document.getElementById("showComments").innerHTML = xhttp.responseText;
+				}
+			}
+		};
+</script>
 
